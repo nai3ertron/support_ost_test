@@ -14,7 +14,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
 }
 ?>
 <!DOCTYPE html>
-<html<?php
+<html <?php
 if ($lang
         && ($info = Internationalization::getLanguageInfo($lang))
         && (@$info['direction'] == 'rtl'))
@@ -25,6 +25,7 @@ if ($lang) {
 ?>>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><?php echo Format::htmlchars($title); ?></title>
     <meta name="description" content="customer support platform">
@@ -126,7 +127,7 @@ if (($all_langs = Internationalization::getConfiguredSystemLanguages())
             <a class="pull-left" id="logo" href="<?php echo ROOT_PATH; ?>index.php"
             title="<?php echo __('Support Center'); ?>">
                 <span class="valign-helper"></span>
-                <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php
+                <img src="<?php echo ROOT_PATH; ?>logo.php"  style="border=0" alt="<?php
                 echo $ost->getConfig()->getTitle(); ?>">
             </a>
         </div>

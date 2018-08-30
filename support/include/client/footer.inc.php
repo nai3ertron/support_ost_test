@@ -2,7 +2,10 @@
     </div>
     <div id="footer">
         <p>Copyright &copy; <?php echo date('Y'); ?> <?php echo (string) $ost->company ?: 'osTicket.com'; ?> - All rights reserved.</p>
-        <a id="poweredBy" href="http://osticket.com" target="_blank"><?php echo __('Helpdesk software - powered by osTicket'); ?></a>
+        <p style="margin-left:0%; margin-right:50px"><strong>POWERED BY </strong><?php echo '<a id="poweredBy" href="http://www.zealtechinter.com/" target="_blank"></a>'; ?> </p>
+            <!-- <span>
+                <a id="poweredBy" href="http://www.zealtechinter.com/" target="_blank"></a>
+            </span>     -->
     </div>
 <div id="overlay"></div>
 <div id="loading">

@@ -30,7 +30,7 @@ if ($lang) {
     <title><?php echo Format::htmlchars($title); ?></title>
     <meta name="description" content="customer support platform">
     <meta name="keywords" content="osTicket, Customer support system, support ticket system">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/osticket.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/theme.css?035fd0a" media="screen"/>
     <link rel="stylesheet" href="<?php echo ASSETS_PATH; ?>css/print.css?035fd0a" media="print"/>
@@ -80,7 +80,7 @@ if ($lang) {
     ?>
 </head>
 <body>
-    <div id="container">
+    <div style="margin-top: 50px" id="container">
         <div id="header">
             <div class="pull-right flush-right">
             <p>
@@ -148,6 +148,11 @@ if (($all_langs = Internationalization::getConfiguredSystemLanguages())
         <?php
         } ?>
         <div id="content">
+            
+            <div style="margin-top:5px;margin-bottom:20px;">
+                <input type="password">
+                <button class="btn btn-primary" value="submit">submit</button>
+            </div>
 
          <?php if($errors['err']) { ?>
             <div id="msg_error"><?php echo $errors['err']; ?></div>

@@ -287,7 +287,9 @@ h2, .subject {
   background-color: #0299d2;
 }
 body {
-  background: url('../images/page_bg.png') top left repeat-x #c8c8c8;
+  
+  background: rgb(116, 185, 244);
+  /* background: url('../images/page_bg.png') top left repeat-x #c8c8c8; */
 }
 #container {
   background: #fff;
@@ -410,9 +412,10 @@ body {
   height: 23px;
   outline: none;
   text-indent: -9999px;
-  margin: 0 auto;
-  background: url('../images/poweredby.png') top left no-repeat;
-  background-size: auto 20px;
+  margin: -19px auto;
+  margin-left: 51.5%;
+  background: url('../images/zealtech.png') top no-repeat;
+  background-size: auto 25px;
 }
 .front-page-button {
 }

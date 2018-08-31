@@ -40,7 +40,7 @@ if ($_POST) {
     Draft::deleteForNamespace('ticket.client.'.substr(session_id(), -12));
     //Ticket::create...checks for errors..
     if(($ticket=Ticket::create($vars, $errors, SOURCE))){
-        $msg=__('Support ticket request created');
+        $msg=__('Support question request created');
         // Drop session-backed form data
         unset($_SESSION[':form-data']);
         //Logged in...simply view the newly created ticket.
@@ -51,7 +51,7 @@ if ($_POST) {
         }
     }else{
         $errors['err'] = $errors['err'] ?: sprintf('%s %s',
-            __('Unable to create a ticket.'),
+            __('Unable to create a question.'),
             __('Correct any errors below and try again.'));
     }
 }

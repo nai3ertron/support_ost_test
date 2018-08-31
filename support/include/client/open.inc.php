@@ -31,29 +31,33 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 }
 
 ?>
-<h1><?php echo __('Open a New Ticket');?></h1>
-<p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
+<h1><?php echo __('Open a New Question');?></h1>
+<p><?php echo __('Please fill in the form below to open a new Question.');?></p>
 <form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
   <?php csrf_token(); ?>
   <input type="hidden" name="a" value="open">
-  <table width="800" cellpadding="1" cellspacing="0" border="0">
+  <table width="800" cellpadding="1" cellspacing="0" style="border:0;">
     <tbody>
 <?php
+// show data client 
         if (!$thisclient) {
             $uform = UserForm::getUserForm()->getForm($_POST);
             if ($_POST) $uform->isValid();
             $uform->render(false);
         }
         else { ?>
-            <tr><td colspan="2"><hr /></td></tr>
-        <tr><td><?php echo __('Email'); ?>:</td><td><?php
+            <tr><td colspan="3"><hr /></td></tr>
+        <tr><td><?php echo __('Email'); ?> &ensp;:</td><td><?php
             echo $thisclient->getEmail(); ?></td></tr>
-        <tr><td><?php echo __('Client'); ?>:</td><td><?php
+        <tr><td><?php echo __('Client'); ?>&ensp;:</td><td><?php
             echo Format::htmlchars($thisclient->getName()); ?></td></tr>
+        <tr><td><?php echo __('Organization'); ?>&ensp;:</td>
+            <td><?php echo $thisclient->getOrganization(); ?></td>
+        </tr>
         <?php } ?>
     </tbody>
     <tbody>
-    <tr><td colspan="2"><hr />
+    <tr><td colspan="3"><hr />
         <div class="form-header" style="margin-bottom:0.5em">
         <b><?php echo __('Help Topic'); ?></b>
         </div>
@@ -102,7 +106,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
     <tr class="captchaRow">
         <td class="required"><?php echo __('CAPTCHA Text');?>:</td>
         <td>
-            <span class="captcha"><img src="captcha.php" border="0" align="left"></span>
+            <span class="captcha"><img src="captcha.php" style="border:0; align:left;"></span>
             &nbsp;&nbsp;
             <input id="captcha" type="text" name="captcha" size="6" autocomplete="off">
             <em><?php echo __('Enter the text shown on the image.');?></em>

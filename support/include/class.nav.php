@@ -124,7 +124,7 @@ class StaffNav {
                 );
             }
             $this->tabs['tasks'] = array('desc'=>__('Tasks'), 'href'=>'tasks.php', 'title'=>__('Task Queue'));
-            $this->tabs['tickets'] = array('desc'=>__('Tickets'),'href'=>'tickets.php','title'=>__('Ticket Queue'));
+            $this->tabs['tickets'] = array('desc'=>__('Questions'),'href'=>'tickets.php','title'=>__('Question Queue'));
 
             $this->tabs['kbase'] = array('desc'=>__('Knowledgebase'),'href'=>'kb.php','title'=>__('Knowledgebase'));
             if (count($this->getRegisteredApps()))
@@ -146,17 +146,17 @@ class StaffNav {
                     $subnav[]=array('desc'=>__('Tasks'), 'href'=>'tasks.php', 'iconclass'=>'Ticket', 'droponly'=>true);
                     break;
                 case 'tickets':
-                    $subnav[]=array('desc'=>__('Tickets'),'href'=>'tickets.php','iconclass'=>'Ticket', 'droponly'=>true);
+                    $subnav[]=array('desc'=>__('Questions'),'href'=>'tickets.php','iconclass'=>'Ticket', 'droponly'=>true);
                     if($staff) {
                         if(($assigned=$staff->getNumAssignedTickets()))
-                            $subnav[]=array('desc'=>__('My&nbsp;Tickets')." ($assigned)",
+                            $subnav[]=array('desc'=>__('My&nbsp;Questions')." ($assigned)",
                                             'href'=>'tickets.php?status=assigned',
                                             'iconclass'=>'assignedTickets',
                                             'droponly'=>true);
 
                         if ($staff->hasPerm(TicketModel::PERM_CREATE, false))
-                            $subnav[]=array('desc'=>__('New Ticket'),
-                                            'title' => __('Open a New Ticket'),
+                            $subnav[]=array('desc'=>__('New Question'),
+                                            'title' => __('Open a New Question'),
                                             'href'=>'tickets.php?a=open',
                                             'iconclass'=>'newTicket',
                                             'id' => 'new-ticket',
@@ -245,7 +245,7 @@ class AdminNav extends StaffNav{
                 case 'settings':
                     $subnav[]=array('desc'=>__('Company'),'href'=>'settings.php?t=pages','iconclass'=>'pages');
                     $subnav[]=array('desc'=>__('System'),'href'=>'settings.php?t=system','iconclass'=>'preferences');
-                    $subnav[]=array('desc'=>__('Tickets'),'href'=>'settings.php?t=tickets','iconclass'=>'ticket-settings');
+                    $subnav[]=array('desc'=>__('Questions'),'href'=>'settings.php?t=tickets','iconclass'=>'ticket-settings');
                     $subnav[]=array('desc'=>__('Tasks'),'href'=>'settings.php?t=tasks','iconclass'=>'lists');
                     $subnav[]=array('desc'=>__('Agents'),'href'=>'settings.php?t=agents','iconclass'=>'teams');
                     $subnav[]=array('desc'=>__('Users'),'href'=>'settings.php?t=users','iconclass'=>'groups');
@@ -253,8 +253,8 @@ class AdminNav extends StaffNav{
                     break;
                 case 'manage':
                     $subnav[]=array('desc'=>__('Help Topics'),'href'=>'helptopics.php','iconclass'=>'helpTopics');
-                    $subnav[]=array('desc'=>__('Ticket Filters'),'href'=>'filters.php',
-                                        'title'=>__('Ticket Filters'),'iconclass'=>'ticketFilters');
+                    $subnav[]=array('desc'=>__('Question Filters'),'href'=>'filters.php',
+                                        'title'=>__('Question Filters'),'iconclass'=>'ticketFilters');
                     $subnav[]=array('desc'=>__('SLA Plans'),'href'=>'slas.php','iconclass'=>'sla');
                     $subnav[]=array('desc'=>__('API Keys'),'href'=>'apikeys.php','iconclass'=>'api');
                     $subnav[]=array('desc'=>__('Pages'), 'href'=>'pages.php','title'=>'Pages','iconclass'=>'pages');
@@ -344,16 +344,16 @@ class UserNav {
                 $navs['new']=array('desc'=>__('Open a New Question'),'href'=>'open.php','title'=>'');
             if($user && $user->isValid()) {
                 if(!$user->isGuest()) {
-                    $navs['tickets']=array('desc'=>sprintf(__('Tickets (%d)'),$user->getNumTickets($user->canSeeOrgTickets())),
+                    $navs['tickets']=array('desc'=>sprintf(__('Questions (%d)'),$user->getNumTickets($user->canSeeOrgTickets())),
                                            'href'=>'tickets.php',
-                                            'title'=>__('Show all tickets'));
+                                            'title'=>__('Show all Question'));
                 } else {
-                    $navs['tickets']=array('desc'=>__('View Ticket Thread'),
+                    $navs['tickets']=array('desc'=>__('View Question Thread'),
                                            'href'=>sprintf('tickets.php?id=%d',$user->getTicketId()),
-                                           'title'=>__('View ticket status'));
+                                           'title'=>__('View Ticket status'));
                 }
             } else {
-                $navs['status']=array('desc'=>__('Check Ticket Status'),'href'=>'view.php','title'=>'');
+                $navs['status']=array('desc'=>__('Check Question Status'),'href'=>'view.php','title'=>'');
             }
             $this->navs=$navs;
         }

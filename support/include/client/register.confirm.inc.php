@@ -11,7 +11,7 @@ echo Format::display($body); ?>
 <strong><?php echo __('Thanks for registering for an account.'); ?></strong>
 </p>
 <p><?php echo __(
-"We've just sent you an email to the address you entered. Please follow the link in the email to confirm your account and gain access to your tickets."
+"We've just sent you an email to the address you entered. Please follow the link in the email to confirm your account and gain access to your questions."
 ); ?>
 </p>
 <?php } ?>

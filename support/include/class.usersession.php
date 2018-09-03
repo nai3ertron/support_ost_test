@@ -136,8 +136,8 @@ class ClientSession extends EndUser {
         global $cfg;
 
         $time = $this->session->getLastUpdate($this->token);
-        // Deadband session token updates to once / 30-seconds
-        if (!$force && time() - $time < 30)
+        // Deadband session token updates to once / 60-seconds
+        if (!$force && time() - $time < 60)
             return;
 
         $this->token = $this->getSessionToken();

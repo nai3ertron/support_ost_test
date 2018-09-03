@@ -70,7 +70,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             <td><input type="checkbox" name="clients_only" <?php
                 if ($config['clients_only'])
                     echo 'checked="checked"'; ?>/> <?php echo __(
-                    'Require registration and login to create questions'); ?>
+                    'Require registration and login to create tickets'); ?>
             <i class="help-tip icon-question-sign" href="#registration_method"></i>
             </td>
         <tr><td><?php echo __('Registration Method'); ?>:</td>

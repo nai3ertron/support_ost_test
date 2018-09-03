@@ -48,7 +48,7 @@ else
 <div class="sticky bar opaque">
     <div class="content">
         <div class="pull-left flush-left">
-            <h2><?php echo __('Question Filters');?></h2>
+            <h2><?php echo __('Ticket Filters');?></h2>
         </div>
         <div class="pull-right flush-right">
             <a href="filters.php?a=add" class="green button action-button"><i class="icon-plus-sign"></i> <?php echo __('Add New Filter');?></a>
@@ -178,3 +178,4 @@ endif;
      </p>
     <div class="clear"></div>
 </div>
+

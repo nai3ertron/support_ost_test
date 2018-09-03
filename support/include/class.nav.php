@@ -148,20 +148,19 @@ class StaffNav {
                 case 'tickets':
                     $subnav[]=array('desc'=>__('Questions'),'href'=>'tickets.php','iconclass'=>'Ticket', 'droponly'=>true);
                     if($staff) {
-                        if(($assigned=$staff->getNumAssignedTickets())){
+                        if(($assigned=$staff->getNumAssignedTickets()))
                             $subnav[]=array('desc'=>__('My&nbsp;Questions')." ($assigned)",
-                                            'href'=>'',
+                                            'href'=>'tickets.php?status=assigned',
                                             'iconclass'=>'assignedTickets',
                                             'droponly'=>true);
-                        }
-                        if ($staff->hasPerm(TicketModel::PERM_CREATE, false)){
+
+                        if ($staff->hasPerm(TicketModel::PERM_CREATE, false))
                             $subnav[]=array('desc'=>__('New Question'),
                                             'title' => __('Open a New Question'),
                                             'href'=>'tickets.php?a=open',
                                             'iconclass'=>'newTicket',
                                             'id' => 'new-ticket',
                                             'droponly'=>true);
-                        }
                     }
                     break;
                 case 'dashboard':

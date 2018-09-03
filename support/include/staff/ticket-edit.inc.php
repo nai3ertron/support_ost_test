@@ -61,12 +61,12 @@ if ($_POST)
     <tbody>
         <tr>
             <th colspan="2">
-            <em><strong><?php echo __('Ticket Information'); ?></strong>: <?php echo __("Due date overrides SLA's grace period."); ?></em>
+            <em><strong><?php echo __('Question Information'); ?></strong>: <?php echo __("Due date overrides SLA's grace period."); ?></em>
             </th>
         </tr>
         <tr>
             <td width="160" class="required">
-                <?php echo __('Ticket Source');?>:
+                <?php echo __('Question Source');?>:
             </td>
             <td>
                 <select name="source">

@@ -7,9 +7,9 @@ $ticketid=Format::input($_POST['lticket']?$_POST['lticket']:$_GET['t']);
 if ($cfg->isClientEmailVerificationRequired())
     $button = __("Email Access Link");
 else
-    $button = __("View Ticket");
+    $button = __("View Question");
 ?>
-<h1><?php echo __('Check Ticket Status'); ?></h1>
+<h1><?php echo __('Check Question Status'); ?></h1>
 <p><?php
 echo __('Please provide your email address and a ticket number.');
 if ($cfg->isClientEmailVerificationRequired())
@@ -28,7 +28,7 @@ else
             name="lemail" size="30" value="<?php echo $email; ?>" class="nowarn"></label>
     </div>
     <div>
-        <label for="ticketno"><?php echo __('Ticket Number'); ?>:
+        <label for="ticketno"><?php echo __('Question Number'); ?>:
         <input id="ticketno" type="text" name="lticket" placeholder="<?php echo __('e.g. 051243'); ?>"
             size="30" value="<?php echo $ticketid; ?>" class="nowarn"></label>
     </div>

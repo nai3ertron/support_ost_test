@@ -190,7 +190,7 @@ case 'search':
 case 'open':
     $status='open';
     $queue_name = $queue_name ?: 'open';
-    $results_type=__('Open Tickets');
+    $results_type=__('Open Questions');
     if (!$cfg->showAnsweredTickets())
         $tickets->filter(array('isanswered'=>0));
     $queue_sort_options = array('priority,updated', 'updated',
@@ -600,7 +600,7 @@ return false;">
             <?php
             } //end of foreach
         if (!$total)
-            $ferror=__('There are no tickets matching your criteria.');
+            $ferror=__('There are no questions matching your criteria.');
         ?>
     </tbody>
     <tfoot>
@@ -660,4 +660,3 @@ $(function() {
     $('[data-toggle=tooltip]').tooltip();
 });
 </script>
-

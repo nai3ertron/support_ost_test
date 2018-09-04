@@ -369,7 +369,7 @@ $open_name = _P('queue-name',
     'Open');
 if($cfg->showAnsweredTickets()) {
     $nav->addSubMenu(array('desc'=>$open_name.' ('.number_format($stats['open']+$stats['answered']).')',
-                            'title'=>__('Open Tickets'),
+                            'title'=>__('Open Questions'),
                             'href'=>'tickets.php?status=open',
                             'iconclass'=>'Ticket'),
                         ((!$_REQUEST['status'] && !isset($_SESSION['advsearch'])) || $_REQUEST['status']=='open'));
@@ -378,7 +378,7 @@ if($cfg->showAnsweredTickets()) {
     if ($stats) {
 
         $nav->addSubMenu(array('desc'=>$open_name.' ('.number_format($stats['open']).')',
-                               'title'=>__('Open Tickets'),
+                               'title'=>__('Open Questions'),
                                'href'=>'tickets.php?status=open',
                                'iconclass'=>'Ticket'),
                             ((!$_REQUEST['status'] && !isset($_SESSION['advsearch'])) || $_REQUEST['status']=='open'));

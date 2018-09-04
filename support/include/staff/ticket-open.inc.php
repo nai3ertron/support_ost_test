@@ -31,7 +31,7 @@ if ($_POST)
  <input type="hidden" name="a" value="open">
 <div style="margin-bottom:20px; padding-top:5px;">
     <div class="pull-left flush-left">
-        <h2><?php echo __('Open a New Ticket');?></h2>
+        <h2><?php echo __('Open a New Question');?></h2>
     </div>
 </div>
  <table class="form_table fixed" width="940" border="0" cellspacing="0" cellpadding="2">
@@ -108,7 +108,7 @@ if ($_POST)
         <?php
         if($cfg->notifyONNewStaffTicket()) {  ?>
         <tr>
-            <td width="160"><?php echo __('Ticket Notice'); ?>:</td>
+            <td width="160"><?php echo __('Question Notice'); ?>:</td>
             <td>
             <input type="checkbox" name="alertuser" <?php echo (!$errors || $info['alertuser'])? 'checked="checked"': ''; ?>><?php
                 echo __('Send alert to user.'); ?>
@@ -120,12 +120,12 @@ if ($_POST)
     <tbody>
         <tr>
             <th colspan="2">
-                <em><strong><?php echo __('Ticket Information and Options');?></strong>:</em>
+                <em><strong><?php echo __('Question Information and Options');?></strong>:</em>
             </th>
         </tr>
         <tr>
             <td width="160" class="required">
-                <?php echo __('Ticket Source');?>:
+                <?php echo __('Question Source');?>:
             </td>
             <td>
                 <select name="source">
@@ -450,4 +450,3 @@ $(function() {
     } ?>
 });
 </script>
-

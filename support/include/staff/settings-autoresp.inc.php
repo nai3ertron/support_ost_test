@@ -13,7 +13,7 @@
             <td>
                 <input type="checkbox" name="ticket_autoresponder" <?php
 echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
-                <?php echo __('Ticket Owner'); ?>&nbsp;
+                <?php echo __('Question Owner'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_ticket"></i>
             </td>
         </tr>
@@ -22,7 +22,7 @@ echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
             <td>
                 <input type="checkbox" name="ticket_notice_active" <?php
 echo $config['ticket_notice_active'] ? 'checked="checked"' : ''; ?>/>
-                <?php echo __('Ticket Owner'); ?>&nbsp;
+                <?php echo __('Question Owner'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#new_ticket_by_staff"></i>
             </td>
         </tr>
@@ -49,7 +49,7 @@ echo $config['message_autoresponder_collabs'] ? 'checked="checked"' : ''; ?>/>
             <td>
                 <input type="checkbox" name="overlimit_notice_active" <?php
 echo $config['overlimit_notice_active'] ? 'checked="checked"' : ''; ?>/>
-                <?php echo __('Ticket Submitter'); ?>&nbsp;
+                <?php echo __('Question Submitter'); ?>&nbsp;
                 <i class="help-tip icon-question-sign" href="#overlimit_notice"></i>
             </td>
         </tr>

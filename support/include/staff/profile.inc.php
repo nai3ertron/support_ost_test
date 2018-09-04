@@ -135,7 +135,7 @@ if ($avatar->isChangeable()) { ?>
             <input type="checkbox" name="show_assigned_tickets"
               <?php echo $cfg->showAssignedTickets() ? 'disabled="disabled" ' : ''; ?>
               <?php echo $staff->show_assigned_tickets ? 'checked="checked"' : ''; ?> />
-              <?php echo __('Show assigned tickets on open queue.'); ?>
+              <?php echo __('Show assigned questions on open queue.'); ?>
             <i class="help-tip icon-question-sign" href="#show_assigned_tickets"></i>
             </label>
             <label class="checkbox">

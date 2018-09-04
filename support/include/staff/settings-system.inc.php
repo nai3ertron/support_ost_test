@@ -248,6 +248,7 @@ $gmtime = Misc::gmtime();
 <?php } ?>
                 </select>
                 <span class="error">&nbsp;<?php echo $errors['system_language']; ?></span>
+                <!-- <i class="help-tip icon-question-sign" href="#primary_language"></i> -->
                 <i class="help-tip icon-question-sign" href="#primary_language"></i>
             </td>
         </tr>

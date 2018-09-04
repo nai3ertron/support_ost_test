@@ -298,7 +298,7 @@ case 'due':
     break;
 
 case 'closed':
-    $queue_columns['date']['heading'] = __('Date Closed');
+    $queue_columns['date']['heading'] = __('Date closed');
     $queue_columns['date']['sort'] = $sort_cols;
     $queue_columns['date']['sort_col'] = $date_col = 'closed';
     $queue_columns['date']['sort_dir'] = $sort_dir;

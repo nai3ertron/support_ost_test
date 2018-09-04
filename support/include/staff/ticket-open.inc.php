@@ -120,7 +120,7 @@ if ($_POST)
     <tbody>
         <tr>
             <th colspan="2">
-                <em><strong><?php echo __('Question Information and Options');?></strong>:</em>
+                <em><strong><?php echo __('Question  Information and Options');?></strong>:</em>
             </th>
         </tr>
         <tr>
@@ -339,7 +339,7 @@ print $response_form->getField('attachments')->render();
 
                 <table border="0" cellspacing="0" cellpadding="2" width="100%">
             <tr>
-                <td width="100"><?php echo __('Ticket Status');?>:</td>
+                <td width="100"><?php echo __('Question Status');?>:</td>
                 <td>
                     <select name="statusId">
                     <?php

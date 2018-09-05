@@ -395,8 +395,8 @@ if($cfg->showAnsweredTickets()) {
 
 if($stats['assigned']) {
 
-    $nav->addSubMenu(array('desc'=>__('My Tickets').' ('.number_format($stats['assigned']).')',
-                           'title'=>__('Assigned Tickets'),
+    $nav->addSubMenu(array('desc'=>__('My Questions').' ('.number_format($stats['assigned']).')',
+                           'title'=>__('Assigned Questions'),
                            'href'=>'tickets.php?status=assigned',
                            'iconclass'=>'assignedTickets'),
                         ($_REQUEST['status']=='assigned'));
@@ -429,7 +429,7 @@ if (isset($_SESSION['advsearch'])) {
 }
 
 $nav->addSubMenu(array('desc' => __('Closed'),
-                       'title'=>__('Closed Tickets'),
+                       'title'=>__('Closed Questions'),
                        'href'=>'tickets.php?status=closed',
                        'iconclass'=>'closedTickets'),
                     ($_REQUEST['status']=='closed'));

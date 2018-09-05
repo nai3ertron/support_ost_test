@@ -79,7 +79,7 @@ if($ticket->isOverdue())
             <div id="action-dropdown-print" class="action-dropdown anchor-right">
               <ul>
                  <li><a class="no-pjax" target="_blank" href="tickets.php?id=<?php echo $ticket->getId(); ?>&a=print&notes=0"><i
-                 class="icon-file-alt"></i> <?php echo __('Ticket Thread'); ?></a>
+                 class="icon-file-alt"></i> <?php echo __('Question Thread'); ?></a>
                  <li><a class="no-pjax" target="_blank" href="tickets.php?id=<?php echo $ticket->getId(); ?>&a=print&notes=1"><i
                  class="icon-file-text-alt"></i> <?php echo __('Thread + Internal Notes'); ?></a>
               </ul>
@@ -199,7 +199,7 @@ if($ticket->isOverdue())
                     <li class="danger"><a class="ticket-action" href="#tickets/<?php
                     echo $ticket->getId(); ?>/status/delete"
                     data-redirect="tickets.php"><i class="icon-trash"></i> <?php
-                    echo __('Delete Ticket'); ?></a></li>
+                    echo __('Delete Question'); ?></a></li>
                 <?php
                  }
                 ?>
@@ -222,7 +222,7 @@ if($ticket->isOverdue())
         <div class="flush-left">
              <h2><a href="tickets.php?id=<?php echo $ticket->getId(); ?>"
              title="<?php echo __('Reload'); ?>"><i class="icon-refresh"></i>
-             <?php echo sprintf(__('Ticket #%s'), $ticket->getNumber()); ?></a>
+             <?php echo sprintf(__('Question  #%s'), $ticket->getNumber()); ?></a>
             </h2>
         </div>
     </div>
@@ -484,7 +484,7 @@ $tcount = $ticket->getThreadEntries($types)->count();
 ?>
 <ul  class="tabs clean threads" id="ticket_tabs" >
     <li class="active"><a id="ticket-thread-tab" href="#ticket_thread"><?php
-        echo sprintf(__('Ticket Thread (%d)'), $tcount); ?></a></li>
+        echo sprintf(__('Question Thread (%d)'), $tcount); ?></a></li>
     <li><a id="ticket-tasks-tab" href="#tasks"
             data-url="<?php
         echo sprintf('#tickets/%d/tasks', $ticket->getId()); ?>"><?php
@@ -691,7 +691,7 @@ if ($errors['err'] && isset($_POST['a'])) {
             </tr>
             <tr>
                 <td width="120" style="vertical-align:top">
-                    <label><strong><?php echo __('Ticket Status');?>:</strong></label>
+                    <label><strong><?php echo __('Question Status');?>:</strong></label>
                 </td>
                 <td>
                     <?php
@@ -785,7 +785,7 @@ if ($errors['err'] && isset($_POST['a'])) {
             <tr><td colspan="2">&nbsp;</td></tr>
             <tr>
                 <td width="120">
-                    <label><?php echo __('Ticket Status');?>:</label>
+                    <label><?php echo __('Question Status');?>:</label>
                 </td>
                 <td>
                     <div class="faded"></div>

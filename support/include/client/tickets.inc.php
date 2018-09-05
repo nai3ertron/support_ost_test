@@ -197,8 +197,8 @@ if ($closedTickets) {?>
 </div>
 </h1>
 <table id="ticketTable" width="800" border="0" cellspacing="0" cellpadding="0">
-  <?php $showing="Open Question"; ?>
-    <caption><?php echo $showing; ?></caption>
+  
+    <caption><?php echo __('Open Question') ?></caption>
     <thead>
         <tr>
             <th nowrap>

@@ -84,14 +84,14 @@ $queue_name = $_SESSION[$queue_key] ?: '';
 switch ($queue_name) {
 case 'closed':
     $status='closed';
-    $results_type=__('Closed Tickets');
+    $results_type=__('Closed Questions');
     $showassigned=true; //closed by.
     $queue_sort_options = array('closed', 'priority,due', 'due',
         'priority,updated', 'priority,created', 'answered', 'number', 'hot');
     break;
 case 'overdue':
     $status='open';
-    $results_type=__('Overdue Tickets');
+    $results_type=__('Overdue Questions');
     $tickets->filter(array('isoverdue'=>1));
     $queue_sort_options = array('priority,due', 'due', 'priority,updated',
         'updated', 'answered', 'priority,created', 'number', 'hot');
@@ -99,7 +99,7 @@ case 'overdue':
 case 'assigned':
     $status='open';
     $staffId=$thisstaff->getId();
-    $results_type=__('My Tickets');
+    $results_type=__('My Questions');
     $tickets->filter(Q::any(array(
         'staff_id'=>$thisstaff->getId(),
         Q::all(array('staff_id' => 0, 'team_id__gt' => 0)),
@@ -111,7 +111,7 @@ case 'assigned':
 case 'answered':
     $status='open';
     $showanswered=true;
-    $results_type=__('Answered Tickets');
+    $results_type=__('Answered Questions');
     $tickets->filter(array('isanswered'=>1));
     $queue_sort_options = array('answered', 'priority,updated', 'updated',
         'priority,created', 'priority,due', 'due', 'number', 'hot');
@@ -298,7 +298,7 @@ case 'due':
     break;
 
 case 'closed':
-    $queue_columns['date']['heading'] = __('Date closed');
+    $queue_columns['date']['heading'] = __('Date Closed');
     $queue_columns['date']['sort'] = $sort_cols;
     $queue_columns['date']['sort_col'] = $date_col = 'closed';
     $queue_columns['date']['sort_dir'] = $sort_dir;

@@ -1,6 +1,6 @@
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <tbody>
-        <tr><th><em><b><?php echo __('New Ticket Alert'); ?></b>:
+        <tr><th><em><b><?php echo __('New Question Alert'); ?></b>:
             <i class="help-tip icon-question-sign" href="#ticket_alert"></i>
             </em></th></tr>
         <tr>
@@ -107,7 +107,7 @@
                 <?php echo __('Department Manager'); ?>
             </td>
         </tr>
-        <tr><th><em><b><?php echo __('Ticket Assignment Alert'); ?></b>:
+        <tr><th><em><b><?php echo __('Question Assignment Alert'); ?></b>:
             <i class="help-tip icon-question-sign" href="#assignment_alert"></i>
             </em></th></tr>
         <tr>
@@ -138,7 +138,7 @@
                 <?php echo __('Team Members'); ?>
             </td>
         </tr>
-        <tr><th><em><b><?php echo __('Ticket Transfer Alert'); ?></b>:
+        <tr><th><em><b><?php echo __('Question Transfer Alert'); ?></b>:
             <i class="help-tip icon-question-sign" href="#transfer_alert"></i>
             </em></th></tr>
         <tr>
@@ -168,7 +168,7 @@
                 <?php echo __('Department Members'); ?>
             </td>
         </tr>
-        <tr><th><em><b><?php echo __('Overdue Ticket Alert'); ?></b>:
+        <tr><th><em><b><?php echo __('Overdue Question Alert'); ?></b>:
             <i class="help-tip icon-question-sign" href="#overdue_alert"></i>
             </em></th></tr>
         <tr>

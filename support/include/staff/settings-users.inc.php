@@ -128,7 +128,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             <td><input type="checkbox" name="client_verify_email" <?php
                 if ($config['client_verify_email'])
                     echo 'checked="checked"'; ?>/> <?php echo __(
-                'Require email verification on "Check Ticket Status" page'); ?>
+                'Require email verification on "Check Question Status" page'); ?>
             <i class="help-tip icon-question-sign" href="#client_verify_email"></i>
             </td>
         </tr>
@@ -172,7 +172,7 @@ $manage_content = function($title, $content) use ($contents) {
         <tr>
             <th colspan="2">
                 <em><b><?php echo __(
-                'Authentication and Registration Templates &amp; Pages'); ?></b></em>
+                'Authentication and Registration Templates & Pages'); ?></b></em>
             </th>
         </tr>
         <?php $manage_content(__('Guest Ticket Access'), 'access-link'); ?>

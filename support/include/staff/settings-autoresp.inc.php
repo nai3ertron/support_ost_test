@@ -9,7 +9,7 @@
     <tbody>
 
         <tr>
-            <td width="160"><?php echo __('New Ticket'); ?>:</td>
+            <td width="160"><?php echo __('New Question'); ?>:</td>
             <td>
                 <input type="checkbox" name="ticket_autoresponder" <?php
 echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
@@ -18,7 +18,7 @@ echo $config['ticket_autoresponder'] ? 'checked="checked"' : ''; ?>/>
             </td>
         </tr>
         <tr>
-            <td width="160"><?php echo __('New Ticket by Agent'); ?>:</td>
+            <td width="160"><?php echo __('New Question by Agent'); ?>:</td>
             <td>
                 <input type="checkbox" name="ticket_notice_active" <?php
 echo $config['ticket_notice_active'] ? 'checked="checked"' : ''; ?>/>

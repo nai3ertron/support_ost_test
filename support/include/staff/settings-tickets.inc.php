@@ -44,7 +44,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 <div class="error"><?php echo $errors['ticket_number_format']; ?></div>
             </td>
         </tr>
-        <tr><td width="220"><?php echo __('Default Ticket Number Sequence'); ?>:</td>
+        <tr><td width="220"><?php echo __('Default Question Number Sequence'); ?>:</td>
 <?php $selected = 'selected="selected"'; ?>
             <td>
                 <select name="ticket_sequence_id">
@@ -188,20 +188,20 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </td>
         </tr>
         <tr>
-            <td><?php echo __('Assigned Tickets');?>:</td>
+            <td><?php echo __('Assigned Questions');?>:</td>
             <td>
                 <input type="checkbox" name="show_assigned_tickets" <?php
                 echo !$config['show_assigned_tickets']?'checked="checked"':''; ?>>
-                <?php echo __('Exclude assigned tickets from open queue.'); ?>
+                <?php echo __('Exclude assigned questions from open queue'); ?>
                 <i class="help-tip icon-question-sign" href="#assigned_tickets"></i>
             </td>
         </tr>
         <tr>
-            <td><?php echo __('Answered Tickets');?>:</td>
+            <td><?php echo __('Answered Questions');?>:</td>
             <td>
                 <input type="checkbox" name="show_answered_tickets" <?php
                 echo !$config['show_answered_tickets']?'checked="checked"':''; ?>>
-                <?php echo __('Exclude answered tickets from open queue.'); ?>
+                <?php echo __('Exclude answered questions from open queue'); ?>
                 <i class="help-tip icon-question-sign" href="#answered_tickets"></i>
             </td>
         </tr>
@@ -211,7 +211,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             </th>
         </tr>
         <tr>
-            <td width="180"><?php echo __('Ticket Attachment Settings');?>:</td>
+            <td width="180"><?php echo __('Question Attachment Settings');?>:</td>
             <td>
 <?php
                 $tform = TicketForm::objects()->one()->getForm();

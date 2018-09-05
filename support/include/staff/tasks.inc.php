@@ -228,7 +228,7 @@ default:
         break;
     }
 case 'created':
-    $queue_columns['date']['heading'] = __('Date created');
+    $queue_columns['date']['heading'] = __('Date Created');
     $queue_columns['date']['sort'] = 'created';
     $queue_columns['date']['sort_col'] = $date_col = 'created';
     $tasks->order_by($sort_dir ? 'created' : '-created');

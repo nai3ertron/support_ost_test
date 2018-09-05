@@ -192,7 +192,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <th colspan="2">
                             <em><b><?php echo __(
-                            'Authentication and Registration Templates &amp; Pages'); ?></b></em>
+                            'Authentication and Registration Templates & Pages'); ?></b></em>
                         </th>
                     </tr>
                     <?php $manage_content(__('Agent Welcome Email'), 'registration-staff'); ?>

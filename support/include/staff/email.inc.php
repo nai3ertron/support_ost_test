@@ -74,7 +74,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info);
         </tr>
         <tr>
             <th colspan="2">
-                <em><strong><?php echo __('New Ticket Settings'); ?></strong></em>
+                <em><strong><?php echo __('New Question Settings'); ?></strong></em>
             </th>
         </tr>
         <tr>

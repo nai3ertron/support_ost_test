@@ -12,7 +12,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
     <li class="active"><a href="#settings">
         <i class="icon-asterisk"></i> <?php echo __('Settings'); ?></a></li>
     <li><a href="#alerts">
-        <i class="icon-bell-alt"></i> <?php echo __('Alerts &amp; Notices'); ?></a></li>
+        <i class="icon-bell-alt"></i> <?php echo __('Alerts & Notices'); ?></a></li>
 </ul>
 <div id="tasks-tabs_container">
    <div id="settings" class="tab_content">

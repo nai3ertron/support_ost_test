@@ -141,12 +141,12 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info);
             </td>
         </tr>
         <tr>
-            <td><?php echo __('Ticket Assignment'); ?>:</td>
+            <td><?php echo __('Question Assignment'); ?>:</td>
             <td>
                 <label>
                 <input type="checkbox" name="assign_members_only" <?php echo
                 $info['assign_members_only']?'checked="checked"':''; ?>>
-                <?php echo __('Restrict ticket assignment to department members'); ?>
+                <?php echo __('Restrict question assignment to department members'); ?>
                 </label>
                 <i class="help-tip icon-question-sign" href="#sandboxing"></i>
             </td>
@@ -222,7 +222,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info);
         </tr>
         <tr>
             <td width="180">
-                <?php echo __('New Ticket');?>:
+                <?php echo __('New Question');?>:
             </td>
             <td>
                 <label>

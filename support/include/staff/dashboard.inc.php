@@ -45,7 +45,7 @@ $plots = $report->getPlotData();
                 </select>
             </label>
             <button class="green button action-button muted" type="submit">
-                <?php echo __( 'Refresh');?>
+                <?php echo __( 'Search');?>
             </button>
             <i class="help-tip icon-question-sign" href="#report_timeframe"></i>
     </div>

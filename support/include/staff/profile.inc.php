@@ -362,10 +362,9 @@ if ($avatar->isChangeable()) { ?>
         <tr class="header">
           <th colspan="2">
             <?php echo __('Signature'); ?>
-            <div><small><?php echo __(
-            "Optional signature used on outgoing emails.")
+            <div><small><?php echo __("Optional signature used on outgoing emails.")
             .' '.
-            __('Signature is made available as a choice, on ticket reply.'); ?>
+            __('Signature is made available as a choice, on question reply.'); ?>
             </small></div>
           </th>
         </tr>

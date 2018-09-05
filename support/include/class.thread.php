@@ -1105,7 +1105,7 @@ implements TemplateVariable {
           'files' => __('Attached files'),
           'body' => __('Message body'),
           'create_date' => array(
-              'class' => 'FormattedDate', 'desc' => __('Date created'),
+              'class' => 'FormattedDate', 'desc' => __('Date Created'),
           ),
           'ip_address' => __('IP address of remote user, for web submissions'),
           'poster' => __('Submitter of the thread item'),

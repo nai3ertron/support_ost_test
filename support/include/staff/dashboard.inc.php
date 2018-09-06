@@ -11,7 +11,7 @@ $plots = $report->getPlotData();
 
 <link rel="stylesheet" type="text/css" href="css/dashboard.css?035fd0a"/>
 
-<form method="post" action="dashboard.php">
+<form method="post" action="dashboard.php" autocomplete="off">
 <div id="basic_search">
     <div style="min-height:25px;">
         <!--<p><?php //echo __('Select the starting time and period for the system activity graph');?></p>-->
@@ -19,7 +19,7 @@ $plots = $report->getPlotData();
             <label>
                 <?php echo __( 'Report timeframe'); ?>:
                 <input type="text" class="dp input-medium search-query"
-                    name="start" placeholder="<?php echo __('Last month');?>"
+                    name="start"  placeholder="<?php echo __('Last month');?>"
                     value="<?php
                         echo Format::htmlchars($report->getStartDate());
                     ?>" />
@@ -88,7 +88,7 @@ foreach ($groups as $g=>$desc) {
     <table class="dashboard-stats table"><tbody><tr>
 <?php
     foreach ($data['columns'] as $j=>$c) { ?>
-        <th <?php if ($j === 0) echo 'width="30%" class="flush-left"'; ?>><?php echo Format::htmlchars($c); ?></th>
+        <th <?php echo ":::::".$c; if ($j === 0) echo 'width="30%" class="flush-left"'; ?>><?php echo Format::htmlchars($c); ?></th>
 <?php
     } ?>
     </tr></tbody>
@@ -122,4 +122,15 @@ foreach ($groups as $g=>$desc) {
 </form>
 <script>
     $.drawPlots(<?php echo JsonDataEncoder::encode($report->getPlotData()); ?>);
+    $(document).ready(function(){
+        // $("#dt").datepicker();
+        $("[name='start']").click(function(){
+            $("[name='start']").val('');
+        });
+        $("[name='start']").datepicker({
+            // defaultDate: '01/08/2018',
+            minDate:'01/09/2018',
+            maxDate: 0,
+        });
+    });
 </script>

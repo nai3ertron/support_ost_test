@@ -28,6 +28,8 @@ if ($lang) {
         .tip_shadow { display:block !important; }
     </style>
     <![endif]-->
+    <!-- <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-1.11.2.min.js?035fd0a"></script>
     <link rel="stylesheet" href="<?php echo ROOT_PATH ?>css/thread.css?035fd0a" media="all"/>
     <link rel="stylesheet" href="<?php echo ROOT_PATH ?>scp/css/scp.css?035fd0a" media="all"/>

@@ -159,7 +159,7 @@ class OverviewReport {
             ->constrain(array(
                 'thread__events' => array(
                     'thread__events__annulled' => 0,
-                    'thread__events__timestamp__range' => array($start, $stop),
+                    // 'thread__events__timestamp__range' => array($start, $stop),
                 ),
             ))
             ->aggregate(array(
@@ -192,10 +192,10 @@ class OverviewReport {
             $pk = 'dept_id';
             $stats = $stats
                 ->filter(array('dept_id__in' => $thisstaff->getDepts()))
-                ->values('dept__id', 'dept__name');
+                ->values('dept_id', 'dept__name');
             $times = $times
                 ->filter(array('dept_id__in' => $thisstaff->getDepts()))
-                ->values('dept__id');
+                ->values('dept_id');
             break;
         case 'topic':
             $headers = array(__('Help Topic'));
@@ -228,6 +228,10 @@ class OverviewReport {
             break;
         default:
             # XXX: Die if $group not in $groups
+            return array(
+                "columns" => array(),
+                "data" => array()
+            );
         }
 
         $timings = array();

@@ -179,7 +179,7 @@ if ($avatar->isChangeable()) { ?>
         </tr>
         <tr>
             <td width="180"><?php echo __('Auto Refresh Rate');?>:
-              <div class="faded"><?php echo __('Tickets page refresh rate in minutes.'); ?></div>
+              <div class="faded"><?php echo __('Questions page refresh rate in minutes.'); ?></div>
             </td>
             <td>
                 <select name="auto_refresh_rate">

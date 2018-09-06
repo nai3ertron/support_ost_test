@@ -175,7 +175,7 @@ $manage_content = function($title, $content) use ($contents) {
                 'Authentication and Registration Templates & Pages'); ?></b></em>
             </th>
         </tr>
-        <?php $manage_content(__('Guest Ticket Access'), 'access-link'); ?>
+        <?php $manage_content(__('Guest Question Access'), 'access-link'); ?>
         <?php $manage_content(__('Sign-In Page'), 'banner-client'); ?>
         <?php $manage_content(__('Password Reset Email'), 'pwreset-client'); ?>
         <?php $manage_content(__('Please Confirm Email Address Page'), 'registration-confirm'); ?>

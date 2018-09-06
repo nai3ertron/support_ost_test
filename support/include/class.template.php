@@ -23,23 +23,23 @@ class EmailTemplateGroup {
     var $_templates;
     static $all_groups = array(
         'sys' => /* @trans */ 'System Management Templates',
-        'a.ticket.user' => /* @trans */ 'Ticket End-User Email Templates',
-        'b.ticket.staff' => /* @trans */ 'Ticket Agent Email Templates',
+        'a.ticket.user' => /* @trans */ 'Question End-User Email Templates',
+        'b.ticket.staff' => /* @trans */ 'Question Agent Email Templates',
         'c.task' => /* @trans */ 'Task Email Templates',
     );
     static $all_names=array(
         'ticket.autoresp'=>array(
             'group'=>'a.ticket.user',
-            'name'=>/* @trans */ 'New Ticket Auto-response',
-            'desc'=>/* @trans */ 'Autoresponse sent to user, if enabled, on new ticket.',
+            'name'=>/* @trans */ 'New Question Auto-response',
+            'desc'=>/* @trans */ 'Autoresponse sent to user, if enabled, on new question.',
             'context' => array(
                 'ticket', 'signature', 'message', 'recipient'
             ),
         ),
         'ticket.autoreply'=>array(
             'group'=>'a.ticket.user',
-            'name'=>/* @trans */ 'New Ticket Auto-reply',
-            'desc'=>/* @trans */ 'Canned Auto-reply sent to user on new ticket, based on filter matches. Overwrites "normal" auto-response.',
+            'name'=>/* @trans */ 'New Question Auto-reply',
+            'desc'=>/* @trans */ 'Canned Auto-reply sent to user on new question, based on filter matches. Overwrites normal auto-response.',
             'context' => array(
                 'ticket', 'signature', 'response', 'recipient',
             ),
@@ -54,7 +54,7 @@ class EmailTemplateGroup {
         ),
         'ticket.notice'=>array(
             'group'=>'a.ticket.user',
-            'name'=>/* @trans */ 'New Ticket Notice',
+            'name'=>/* @trans */ 'New Question Notice',
             'desc'=>/* @trans */ 'Notice sent to user, if enabled, on new ticket created by an agent on their behalf (e.g phone calls).',
             'context' => array(
                 'ticket', 'signature', 'recipient', 'staff', 'message',
@@ -79,15 +79,15 @@ class EmailTemplateGroup {
         'ticket.activity.notice'=>array(
             'group'=>'a.ticket.user',
             'name'=>/* @trans */ 'New Activity Notice',
-            'desc'=>/* @trans */ 'Template used to notify collaborators on ticket activity (e.g CC on reply)',
+            'desc'=>/* @trans */ 'Template used to notify collaborators on question activity (e.g CC on reply)',
             'context' => array(
                 'ticket', 'signature', 'message', 'poster', 'recipient',
             ),
         ),
         'ticket.alert'=>array(
             'group'=>'b.ticket.staff',
-            'name'=>/* @trans */ 'New Ticket Alert',
-            'desc'=>/* @trans */ 'Alert sent to agents, if enabled, on new ticket.',
+            'name'=>/* @trans */ 'New Question Alert',
+            'desc'=>/* @trans */ 'Alert sent to agents, if enabled, on new question.',
             'context' => array(
                 'ticket', 'recipient', 'message',
             ),
@@ -95,7 +95,7 @@ class EmailTemplateGroup {
         'message.alert'=>array(
             'group'=>'b.ticket.staff',
             'name'=>/* @trans */ 'New Message Alert',
-            'desc'=>/* @trans */ 'Alert sent to agents, if enabled, when user replies to an existing ticket.',
+            'desc'=>/* @trans */ 'Alert sent to agents, if enabled, when user replies to an existing question.',
             'context' => array(
                 'ticket', 'recipient', 'message', 'poster',
             ),
@@ -110,24 +110,24 @@ class EmailTemplateGroup {
         ),
         'assigned.alert'=>array(
             'group'=>'b.ticket.staff',
-            'name'=>/* @trans */ 'Ticket Assignment Alert',
-            'desc'=>/* @trans */ 'Alert sent to agents on ticket assignment.',
+            'name'=>/* @trans */ 'Question Assignment Alert',
+            'desc'=>/* @trans */ 'Alert sent to agents on question assignment.',
             'context' => array(
                 'ticket', 'recipient', 'comments', 'assignee', 'assigner',
             ),
         ),
         'transfer.alert'=>array(
             'group'=>'b.ticket.staff',
-            'name'=>/* @trans */ 'Ticket Transfer Alert',
-            'desc'=>/* @trans */ 'Alert sent to agents on ticket transfer.',
+            'name'=>/* @trans */ 'Question Transfer Alert',
+            'desc'=>/* @trans */ 'Alert sent to agents on question transfer.',
             'context' => array(
                 'ticket', 'recipient', 'comments', 'staff',
             ),
         ),
         'ticket.overdue'=>array(
             'group'=>'b.ticket.staff',
-            'name'=>/* @trans */ 'Overdue Ticket Alert',
-            'desc'=>/* @trans */ 'Alert sent to agents on stale or overdue tickets.',
+            'name'=>/* @trans */ 'Overdue Question Alert',
+            'desc'=>/* @trans */ 'Alert sent to agents on stale or overdue questions.',
             'context' => array(
                 'ticket', 'recipient', 'comments',
             ),

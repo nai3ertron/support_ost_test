@@ -129,7 +129,9 @@ foreach ($groups as $g=>$desc) {
         });
         $("[name='start']").datepicker({
             // defaultDate: '01/08/2018',
-            minDate:'01/09/2018',
+            // language: 'en' ,
+            isRTL: false,
+            minDate:new Date("2018-08-31"), // set date start 
             maxDate: 0,
         });
     });

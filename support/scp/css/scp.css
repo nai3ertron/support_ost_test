@@ -2921,6 +2921,11 @@ a.attachment {
     margin-bottom: 0.3em;
 }
 
+.table_me{
+    text-align: left;
+    margin-top: 2px;
+}
+
 /* FIXME: Drop this with select2 4.0.1
  * Fixes a rendering issue on Safari
  */

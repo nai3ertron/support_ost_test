@@ -9,7 +9,7 @@ if ($agent->canManageTickets())
 // Mass Claim/Assignment
 if ($agent->hasPerm(Ticket::PERM_ASSIGN, false)) {?>
 <span
-    class="action-button" data-placement="bottom"
+    class="btn-aqua action-button" data-placement="bottom"
     data-dropdown="#action-dropdown-assign" data-toggle="tooltip" title=" <?php
     echo __('Assign'); ?>">
     <i class="icon-caret-down pull-right"></i>
@@ -34,7 +34,7 @@ if ($agent->hasPerm(Ticket::PERM_ASSIGN, false)) {?>
 
 // Mass Transfer
 if ($agent->hasPerm(Ticket::PERM_TRANSFER, false)) {?>
-<span class="action-button">
+<span class="btn-yellow action-button">
  <a class="tickets-action" id="tickets-transfer" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Transfer'); ?>"
     href="#tickets/mass/transfer"><i class="icon-share"></i></a>
@@ -45,7 +45,7 @@ if ($agent->hasPerm(Ticket::PERM_TRANSFER, false)) {?>
 
 // Mass Delete
 if ($agent->hasPerm(Ticket::PERM_DELETE, false)) {?>
-<span class="red button action-button">
+<span class="btn-red button action-button">
  <a class="tickets-action" id="tickets-delete" data-placement="bottom"
     data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
     href="#tickets/mass/delete"><i class="icon-trash"></i></a>

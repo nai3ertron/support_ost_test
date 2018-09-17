@@ -24,9 +24,9 @@ $plots = $report->getPlotData();
                         echo Format::htmlchars($report->getStartDate());
                     ?>" />
             </label>
-            <label>
+            <label >
                 <?php echo __( 'period');?>:
-                <select name="period">
+                <select name="period" class="btn-aqua">
                     <option value="now" selected="selected">
                         <?php echo __( 'Up to today');?>
                     </option>
@@ -44,7 +44,7 @@ $plots = $report->getPlotData();
                     </option>
                 </select>
             </label>
-            <button class="green button action-button muted" type="submit">
+            <button style="background-color:rgb(253,187,13); color:white;" class=" button action-button muted" type="submit">
                 <?php echo __( 'Search');?>
             </button>
             <i class="help-tip icon-question-sign" href="#report_timeframe"></i>

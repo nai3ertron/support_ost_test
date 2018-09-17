@@ -50,8 +50,15 @@ var scp_prep = function() {
     $('table.list input:checkbox:checked').trigger('change');
 
     $('#selectAll').click(function(e) {
+        $(this).removeClass("footer_sec")
+        $(this).addClass("footer_add")
+        $("#selectToggle").removeClass("footer_add")
+        $("#selectToggle").addClass("footer_sec")
+        $("#selectNone").removeClass("footer_add")
+        $("#selectNone").addClass("footer_sec")
         e.preventDefault();
         var target = $(this).attr('href').substr(1, $(this).attr('href').length);
+        // console.log("1");
         $(this).closest('form')
             .find('input:enabled:checkbox.'+target)
             .prop('checked', true)
@@ -62,6 +69,12 @@ var scp_prep = function() {
 
 
     $('#selectNone').click(function(e) {
+        $(this).removeClass("footer_sec")
+        $(this).addClass("footer_add")
+        $("#selectAll").removeClass("footer_add")
+        $("#selectAll").addClass("footer_sec")
+        $("#selectToggle").removeClass("footer_add")
+        $("#selectToggle").addClass("footer_sec")
         e.preventDefault();
         var target = $(this).attr('href').substr(1, $(this).attr('href').length);
         $(this).closest('form')
@@ -72,6 +85,12 @@ var scp_prep = function() {
      });
 
     $('#selectToggle').click(function(e) {
+        $(this).removeClass("footer_sec")
+        $(this).addClass("footer_add")
+        $("#selectAll").removeClass("footer_add")
+        $("#selectAll").addClass("footer_sec")
+        $("#selectNone").removeClass("footer_add")
+        $("#selectNone").addClass("footer_sec")
         e.preventDefault();
         var target = $(this).attr('href').substr(1, $(this).attr('href').length);
         $(this).closest('form')

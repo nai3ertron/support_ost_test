@@ -24,7 +24,7 @@ $info = ($_POST && $errors)?Format::htmlchars($_POST):array();
             <?php if ($show_reset && $cfg->allowPasswordReset()) { ?>
             <h3 style="display:inline"><a href="pwreset.php"><?php echo __('Forgot My Password'); ?></a></h3>
             <?php } ?>
-            <button class="submit button pull-right" type="submit" name="submit"><i class="icon-signin"></i>
+            <button style="background-color:rgb(43,45,141); color:#FFFF" class="submit button pull-right" type="submit" name="submit"><i class="icon-signin"></i>
                 <?php echo __('Log In'); ?>
             </button>
         </fieldset>
@@ -50,11 +50,11 @@ if (count($ext_bks)) { ?>
         </div>
     </div>
 </div>
-<div id="poweredBy"><?php echo __('Powered by'); ?>
+<!-- <div id="poweredBy"><?php //echo __('Powered by'); ?>
     <a href="http://www.osticket.com" target="_blank">
         <img alt="osTicket" src="images/osticket-grey.png" class="osticket-logo">
     </a>
-</div>
+</div> -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         if (undefined === window.getComputedStyle(document.documentElement).backgroundBlendMode) {

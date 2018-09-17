@@ -68,12 +68,12 @@ if ($lang) {
         <p id="info" class="pull-right no-pjax"><?php echo sprintf(__('Welcome, %s.'), '<strong>'.$thisstaff->getFirstName().' '.$thisstaff->getLastName().'</strong>'); ?>
            <?php
             if($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
+            | <a style="color:rgb(43,45,141)" href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
             <?php }else{ ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
+            | <a style="color:rgb(43,45,141)" href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
             <?php } ?>
-            | <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
-            | <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
+            | <a style="color:rgb(43,45,141)" href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
+            | <a style="color:rgb(43,45,141)" href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
         </p>
         <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
             <span class="valign-helper"></span>

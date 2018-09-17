@@ -17,14 +17,14 @@ if(!defined('OSTSTAFFINC') || !$thisstaff) die('Access Denied');
         </div>
 
         <div class="pull-right">
-            <span class="action-button muted" data-dropdown="#category-dropdown">
+            <span class="btn-yellow action-button muted" data-dropdown="#category-dropdown">
                 <i class="icon-caret-down pull-right"></i>
                 <span>
                     <i class="icon-filter"></i>
                     <?php echo __('Category'); ?>
                 </span>
             </span>
-            <span class="action-button muted" data-dropdown="#topic-dropdown">
+            <span class="btn-blue action-button muted" data-dropdown="#topic-dropdown">
                 <i class="icon-caret-down pull-right"></i>
                 <span>
                     <i class="icon-filter"></i>

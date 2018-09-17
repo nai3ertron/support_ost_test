@@ -85,18 +85,18 @@ $users->order_by($order . $order_column);
             </div>
             <div class="pull-right">
                 <?php if ($thisstaff->hasPerm(User::PERM_CREATE)) { ?>
-                <a class="green button action-button popup-dialog"
+                <a class="btn-aqua button popup-dialog"
                    href="#users/add">
                     <i class="icon-plus-sign"></i>
                     <?php echo __('Add User'); ?>
                 </a>
-                <a class="action-button popup-dialog"
+                <a class="btn-yellow button popup-dialog"
                    href="#users/import">
                     <i class="icon-upload"></i>
                     <?php echo __('Import'); ?>
                 </a>
                 <?php } ?>
-                <span class="action-button" data-dropdown="#action-dropdown-more"
+                <span class="btn-blue action-button" data-dropdown="#action-dropdown-more"
                       style="/*DELME*/ vertical-align:top; margin-bottom:0">
                     <i class="icon-caret-down pull-right"></i>
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
@@ -150,7 +150,7 @@ else
  <input type="hidden" id="selected-count" name="count" value="" >
  <input type="hidden" id="org_id" name="org_id" value="" >
  <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
-    <thead>
+    <thead >
         <tr>
             <th nowrap width="4%">&nbsp;</th>
             <th><a <?php echo $name_sort; ?> href="users.php?<?php
@@ -205,14 +205,14 @@ else
                </tr>
 <?php   } //end of foreach. ?>
     </tbody>
-    <tfoot>
+    <tfoot style="background-color:#fff">
      <tr>
-        <td colspan="7">
+        <td colspan="7" style="background-color:#fff; padding:5px">
             <?php if ($total) { ?>
             <?php echo __('Select');?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
             <?php }else{
                 echo '<i>';
                 echo __('Query returned 0 results.');

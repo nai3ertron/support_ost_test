@@ -530,8 +530,8 @@ table.list caption {
 }
 
 table.list thead th {
-    background-color:#eee;
-    color:#000;
+    background-color:rgb(44,92,139);
+    color:#fff;
     text-align:left;
     vertical-align:top;
     padding: 4px 5px;
@@ -544,10 +544,10 @@ table.list th a {
     padding: 4px 5px;
 }
 
-table.list thead th a { padding-right: 15px; display: block; white-space: nowrap; color: #000; background: url('../images/asc_desc.gif') 100% 50% no-repeat; }
+table.list thead th a { padding-right: 15px; display: block; white-space: nowrap; color: #fff; background: url('../images/drop-down.png') 100% 50% no-repeat; }
 
-table.list thead th a.asc { background: url('../images/asc.gif') 100% 50% no-repeat #cfe6ff; }
-table.list thead th a.desc { background: url('../images/desc.gif') 100% 50% no-repeat #cfe6ff; }
+table.list thead th a.asc { background: url('../images/up-arrow.png') 100% 50% no-repeat rgb(44,92,139); }
+table.list thead th a.desc { background: url('../images/drop-arrow.png') 100% 50% no-repeat rgb(44,92,139); }
 table.list tbody td {
     background:#fff;
     border:1px solid #fff;
@@ -2930,3 +2930,40 @@ a.attachment {
  * Fixes a rendering issue on Safari
  */
 .select2-search__field{-webkit-appearance: textfield;}
+
+.footer_sec{
+    background-color: #ccc;
+    color: gray;
+    width: 60px;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+.footer_add{
+    background-color: #0A568E;
+    color: white;
+    width: 60px;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+}
+
+.btn-aqua{
+    background-color:rgb(102,195,179); 
+    color:white;
+}
+
+.btn-yellow{
+    background-color:rgb(253,187,13); 
+    color:white;
+}
+.btn-blue{
+    background-color:rgb(26,150,233); 
+    color:white;
+}
+.btn-red{
+    background-color:rgb(255,38,95); 
+    color:white;
+}

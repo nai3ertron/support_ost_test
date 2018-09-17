@@ -435,12 +435,12 @@ if ($thisstaff->hasPerm(Task::PERM_DELETE, false)) {
     </tbody>
     <tfoot>
      <tr>
-        <td colspan="6">
+        <td colspan="6" style="background-color:#fff; padding:5px">
             <?php if($total && $thisstaff->canManageTickets()){ ?>
             <?php echo __('Select');?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
             <?php }else{
                 echo '<i>';
                 echo $ferror?Format::htmlchars($ferror):__('Query returned 0 results.');

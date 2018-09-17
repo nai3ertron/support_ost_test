@@ -33,7 +33,7 @@ body {
 }
 
 #brickwall {
-    background-image: url(../logo.php?backdrop);
+    background-image: url('../../assets/default/images/bg.png');
     -webkit-background-size: cover;
        -moz-background-size: cover;
          -o-background-size: cover;

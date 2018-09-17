@@ -9,7 +9,7 @@ if ($agent->hasPerm(Task::PERM_CLOSE, false)) {
         $status = $options['status'];
     ?>
         <span
-            class="action-button"
+            class="btn-blue action-button"
             data-dropdown="#action-dropdown-tasks-status">
             <i class="icon-caret-down pull-right"></i>
             <a class="tasks-status-action"
@@ -99,7 +99,7 @@ if ($actions && !isset($options['status'])) {
     $more = $options['morelabel'] ?: __('More');
     ?>
     <span
-        class="action-button"
+        class=" action-button"
         data-dropdown="#action-dropdown-moreoptions">
         <i class="icon-caret-down pull-right"></i>
         <a class="tasks-action"
@@ -136,7 +136,7 @@ if ($actions && !isset($options['status'])) {
     // Mass Claim/Assignment
     if ($agent->hasPerm(Task::PERM_ASSIGN, false)) {?>
     <span
-        class="action-button" data-placement="bottom"
+        class="btn-aqua action-button" data-placement="bottom"
         data-dropdown="#action-dropdown-assign" data-toggle="tooltip" title=" <?php
         echo __('Assign'); ?>">
         <i class="icon-caret-down pull-right"></i>
@@ -161,7 +161,7 @@ if ($actions && !isset($options['status'])) {
 
     // Mass Transfer
     if ($agent->hasPerm(Task::PERM_TRANSFER, false)) {?>
-    <span class="action-button">
+    <span class="btn-yellow action-button">
      <a class="tasks-action" id="tasks-transfer" data-placement="bottom"
         data-toggle="tooltip" title="<?php echo __('Transfer'); ?>"
         href="#tasks/mass/transfer"><i class="icon-share"></i></a>
@@ -172,7 +172,7 @@ if ($actions && !isset($options['status'])) {
 
     // Mass Delete
     if ($agent->hasPerm(Task::PERM_DELETE, false)) {?>
-    <span class="red button action-button">
+    <span class="btn-red button action-button">
      <a class="tasks-action" id="tasks-delete" data-placement="bottom"
         data-toggle="tooltip" title="<?php echo __('Delete'); ?>"
         href="#tasks/mass/delete"><i class="icon-trash"></i></a>

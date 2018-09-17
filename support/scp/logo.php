@@ -30,7 +30,7 @@ if (isset($_GET['backdrop'])) {
     }
     header("Cache-Control: private, max-age=86400");
     header('Pragma: private');
-    Http::redirect('images/login-headquarters.jpg');
+    Http::redirect('images/bg.png');
 }
 elseif (($logo = $ost->getConfig()->getStaffLogo())) {
     $logo->display();

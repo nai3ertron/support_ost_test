@@ -93,7 +93,7 @@ $qstr.='&amp;order='.($order=='DESC' ? 'ASC' : 'DESC');
              ?>
         </select>
         &nbsp;&nbsp;
-        <input type="submit" name="submit" value="<?php echo __('Filter');?>"/>
+        <input style="background-color: rgb(26,150,233);color: white; " type="submit" name="submit" value="<?php echo __('Filter');?>"/>
         &nbsp;<i class="help-tip icon-question-sign" href="#apply_filtering_criteria"></i>
     </form>
  </div>

@@ -2955,6 +2955,11 @@ a.attachment {
     color:white;
 }
 
+.btn-aqua:hover{
+    background-color:white; 
+    color:black;
+}
+
 .btn-yellow{
     background-color:rgb(253,187,13); 
     color:white;
@@ -2967,3 +2972,4 @@ a.attachment {
     background-color:rgb(255,38,95); 
     color:white;
 }
+

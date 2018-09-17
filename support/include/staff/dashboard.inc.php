@@ -26,20 +26,20 @@ $plots = $report->getPlotData();
             </label>
             <label >
                 <?php echo __( 'period');?>:
-                <select name="period" class="btn-aqua">
-                    <option value="now" selected="selected">
+                <select name="period" class="btn-aqua" style="height:26px">
+                    <option style="background-color:white; color:black" value="now" selected="selected">
                         <?php echo __( 'Up to today');?>
                     </option>
-                    <option value="+7 days">
+                    <option style="background-color:white; color:black" value="+7 days">
                         <?php echo __( 'One Week');?>
                     </option>
-                    <option value="+14 days">
+                    <option style="background-color:white; color:black" value="+14 days">
                         <?php echo __( 'Two Weeks');?>
                     </option>
-                    <option value="+1 month">
+                    <option style="background-color:white; color:black" value="+1 month">
                         <?php echo __( 'One Month');?>
                     </option>
-                    <option value="+3 months">
+                    <option style="background-color:white; color:black" value="+3 months">
                         <?php echo __( 'One Quarter');?>
                     </option>
                 </select>

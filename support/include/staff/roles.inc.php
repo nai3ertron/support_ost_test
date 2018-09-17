@@ -5,9 +5,9 @@
             <h2><?php echo __('Roles'); ?></h2>
         </div>
         <div class="pull-right flush-right">
-            <a href="roles.php?a=add" class="green button action-button"><i class="icon-plus-sign"></i> <?php
+            <a href="roles.php?a=add" class="btn-aqua button action-button"><i class="icon-plus-sign"></i> <?php
 echo __('Add New Role'); ?></a>
-            <span class="action-button" data-dropdown="#action-dropdown-more">
+            <span class="btn-blue action-button" data-dropdown="#action-dropdown-more">
                 <i class="icon-caret-down pull-right"></i>
                 <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
             </span>
@@ -81,12 +81,12 @@ csrf_token(); ?>
     </tbody>
     <tfoot>
      <tr>
-        <td colspan="5">
+        <td colspan="5" style="background-color:white; padding:5px">
             <?php if($count){ ?>
             <?php echo __('Select'); ?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All'); ?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None'); ?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle'); ?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All'); ?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None'); ?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle'); ?></a>&nbsp;&nbsp;
             <?php } else {
                 echo sprintf(__('No roles defined yet &mdash; %s add one %s!'),
                     '<a href="roles.php?a=add">','</a>');

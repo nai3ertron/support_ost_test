@@ -79,14 +79,14 @@ $orgs->order_by($order . $order_column);
             </div>
             <div class="pull-right">
                 <?php if ($thisstaff->hasPerm(Organization::PERM_CREATE)) { ?>
-                <a class="green button action-button add-org"
+                <a class="btn-aqua button action-button add-org" 
                    href="#">
                     <i class="icon-plus-sign"></i>
                     <?php echo __('Add Organization'); ?>
                 </a>
                 <?php }
             if ($thisstaff->hasPerm(Organization::PERM_DELETE)) { ?>
-                <span class="action-button" data-dropdown="#action-dropdown-more"
+                <span class="btn-blue action-button" data-dropdown="#action-dropdown-more"
                       style="/*DELME*/ vertical-align:top; margin-bottom:0">
                     <i class="icon-caret-down pull-right"></i>
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>

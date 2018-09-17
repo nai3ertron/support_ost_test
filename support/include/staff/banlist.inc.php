@@ -71,9 +71,9 @@ $query="$select $from $where ORDER BY $order_by LIMIT ".$pageNav->getStart().","
                     </h2>
                 </div>
                 <div class="pull-right flush-right">
-                    <a href="banlist.php?a=add" class="red button action-button">
+                    <a href="banlist.php?a=add" class="btn-red button action-button">
                         <i class="icon-ban-circle"></i> <?php echo __('Ban New Email');?></a>
-                    <span class="action-button" data-dropdown="#action-dropdown-more">
+                    <span class="btn-blue action-button" data-dropdown="#action-dropdown-more">
                         <i class="icon-caret-down pull-right"></i>
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>                        </span>
                     <div id="action-dropdown-more" class="action-dropdown anchor-right">
@@ -139,12 +139,12 @@ $query="$select $from $where ORDER BY $order_by LIMIT ".$pageNav->getStart().","
             endif; ?>
         <tfoot>
          <tr>
-            <td colspan="5">
+            <td colspan="5" style="background-color:white; padding:5px">
                 <?php if($res && $num){ ?>
                 <?php echo __('Select');?>:&nbsp;
-                <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-                <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-                <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+                <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+                <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+                <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
                 <?php }else{
                     echo __('No banned emails found!');
                 } ?>

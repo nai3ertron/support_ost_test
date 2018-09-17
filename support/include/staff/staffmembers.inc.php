@@ -109,11 +109,11 @@ $agents->limit($pageNav->getLimit())->offset($pageNav->getStart());
                 <h2><?php echo __('Agents');?></h2>
             </div>
             <div class="pull-right">
-                <a class="green button action-button" href="staff.php?a=add">
+                <a class="btn-aqua button action-button" href="staff.php?a=add">
                     <i class="icon-plus-sign"></i>
                     <?php echo __( 'Add New Agent'); ?>
                 </a>
-                <span class="action-button" data-dropdown="#action-dropdown-more">
+                <span class="btn-blue action-button" data-dropdown="#action-dropdown-more">
                 <i class="icon-caret-down pull-right"></i>
                 <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
                 </span>
@@ -210,12 +210,12 @@ $agents->limit($pageNav->getLimit())->offset($pageNav->getStart());
         endif; ?>
     <tfoot>
      <tr>
-        <td colspan="8">
+        <td colspan="8" style="background-color:white; padding:5px">
             <?php if ($count) { ?>
             <?php echo __('Select');?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
             <?php }else{
                 echo __('No agents found!');
             } ?>

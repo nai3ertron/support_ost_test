@@ -39,13 +39,13 @@ $pageNav->paginate($categories);
                 <h2><?php echo __('FAQ Categories');?></h2>
             </div>
             <div class="pull-right flush-right">
-                <a href="categories.php?a=add" class="green button">
+                <a href="categories.php?a=add" class="btn-aqua button">
                     <i class="icon-plus-sign"></i>
                     <?php echo __( 'Add New Category');?>
                 </a>
                 <div class="pull-right flush-right">
 
-                    <span class="action-button" data-dropdown="#action-dropdown-more">
+                    <span class="btn-blue action-button" data-dropdown="#action-dropdown-more">
                         <i class="icon-caret-down pull-right"></i>
                         <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
                     </span>

@@ -119,8 +119,9 @@
 .action-button:hover i.icon-caret-down {
     border-color: inherit;
 }
+
 a.action-button, .action-button a {
-  color: inherit;
+  color: none;
   text-decoration: none;
 }
 .action-buttons {

@@ -164,12 +164,12 @@ else
     </tbody>
     <tfoot>
      <tr>
-        <td colspan="6">
+        <td colspan="6" style="background-color:white; padding: 5px">
             <?php if($res && $num){ ?>
             <?php echo __('Select');?>:&nbsp;
-            <a id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
-            <a id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
-            <a id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectAll" href="#ckb"><?php echo __('All');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectNone" href="#ckb"><?php echo __('None');?></a>&nbsp;&nbsp;
+            <a class="footer_sec" id="selectToggle" href="#ckb"><?php echo __('Toggle');?></a>&nbsp;&nbsp;
             <?php }else{
                 echo __('No logs found');
             } ?>

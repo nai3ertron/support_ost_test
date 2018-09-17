@@ -58,9 +58,9 @@ else
             <h2><?php echo __('Canned Responses');?></h2>
         </div>
         <div class="pull-right flush-right">
-            <a href="canned.php?a=add" class="green button"><i class="icon-plus-sign"></i> <?php echo __('Add New Response');?></a>
+            <a href="canned.php?a=add" class="btn-aqua button"><i class="icon-plus-sign"></i> <?php echo __('Add New Response');?></a>
 
-            <span class="action-button" data-dropdown="#action-dropdown-more" style="/*DELME*/ vertical-align:top; margin-bottom:0">
+            <span class="btn-blue action-button" data-dropdown="#action-dropdown-more" style="/*DELME*/ vertical-align:top; margin-bottom:0">
                     <i class="icon-caret-down pull-right"></i>
                     <span ><i class="icon-cog"></i> <?php echo __('More');?></span>
             </span>

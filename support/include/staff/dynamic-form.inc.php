@@ -113,13 +113,14 @@ if ($form && count($langs) > 1) { ?>
       </tr>
     </tbody>
     </table>
-    <table class="table_me" style="padding-top:3px" width="940" border="0" cellspacing="0" cellpadding="2">
+    
+    <table class="form_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <?php if ($form && $form->get('type') == 'T') {
     $uform = UserForm::objects()->one();
     ?>
     <thead>
         <tr>
-            <th colspan="7" >
+            <th colspan="7">
                 <em><strong><?php echo __('User Information Fields'); ?></strong>
                 <?php echo sprintf(__('(These fields are requested for new tickets
                 via the %s form)'),
@@ -152,25 +153,25 @@ if ($form && count($langs) > 1) { ?>
         <?php } ?>
     </tbody>
     <?php } # form->type == 'T' ?>
-    <thead >
+    <thead>
         <tr>
-            <th colspan="7" style="background-color: #ddd; border:1px solid black;padding-top:5px; padding-bottom:5px">
-                <em style="padding-left:5px"><strong><?php echo __('Form Fields'); ?></strong>
+            <th colspan="7">
+                <em><strong><?php echo __('Form Fields'); ?></strong>
                 <?php echo __('fields available where this form is used'); ?></em>
             </th>
         </tr>
-        <tr style="background-color: #ddd;">
-            <th style="border-left:1px solid black; border-bottom:1px solid black;border-right:1px solid black; padding-left:2.5px" nowrap width="4%"
+        <tr>
+            <th  width="4%"
                 ><i class="help-tip icon-question-sign" href="#field_sort"></i></th>
-            <th style=" border-bottom:1px solid black;border-right:1px solid black; padding-left:9.5px; padding-top: 4px;padding-bottom: 4px" nowrap><?php echo __('Label'); ?>
+            <th ><?php echo __('Label'); ?>
                 <i class="help-tip icon-question-sign" href="#field_label"></i></th>
-            <th style=" border-bottom:1px solid black;border-right:1px solid black; padding-left:9.5px; padding-top: 4px;padding-bottom: 4px" nowrap><?php echo __('Type'); ?>
+            <th ><?php echo __('Type'); ?>
                 <i class="help-tip icon-question-sign" href="#field_type"></i></th>
-            <th style=" border-bottom:1px solid black;border-right:1px solid black; padding-left:9.5px; padding-top: 4px;padding-bottom: 4px" nowrap><?php echo __('Visibility'); ?>
+            <th ><?php echo __('Visibility'); ?>
                 <i class="help-tip icon-question-sign" href="#field_visibility"></i></th>
-            <th style=" border-bottom:1px solid black;border-right:1px solid black; padding-left:9.5px; padding-top: 4px;padding-bottom: 4px" nowrap><?php echo __('Variable'); ?>
+            <th ><?php echo __('Variable'); ?>
                 <i class="help-tip icon-question-sign" href="#field_variable"></i></th>
-            <th style=" border-bottom:1px solid black;border-right:1px solid black; padding-left:9.5px; padding-top: 4px;padding-bottom: 4px" nowrap><?php echo __('Delete'); ?>
+            <th ><?php echo __('Delete'); ?>
                 <i class="help-tip icon-question-sign" href="#field_delete"></i></th>
         </tr>
     </thead>
@@ -182,15 +183,16 @@ if ($form && count($langs) > 1) { ?>
         $fi = $f->getImpl();
         $ferrors = $f->errors(); ?>
         <tr>
-            <td style="border-left:1px solid gray;border-bottom:1px solid gray; paddding-top:5px" align="center"><i class="icon-sort"></i></td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;"> <input type="text" size="32" name="label-<?php echo $id; ?>"
+            <td align="center"><i class="icon-sort"></i></td>
+            <td><input type="text" size="32" name="label-<?php echo $id; ?>"
                 data-translate-tag="<?php echo $f->getTranslateTag('label'); ?>"
                 value="<?php echo Format::htmlchars($f->get('label')); ?>"/>
                 <font class="error"><?php
                     if ($ferrors['label']) echo '<br/>'; echo $ferrors['label']; ?>
                 </font>
             </td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;" nowrap><select style="max-width:150px" name="type-<?php echo $id; ?>" <?php
+            <td>
+                <select style="max-width:150px" name="type-<?php echo $id; ?>" <?php
                 if (!$fi->isChangeable()) echo 'disabled="disabled"'; ?>>
                 <?php foreach (FormField::allTypes() as $group=>$types) {
                         ?><optgroup label="<?php echo Format::htmlchars(__($group)); ?>"><?php
@@ -204,8 +206,9 @@ if ($form && count($langs) > 1) { ?>
                 </optgroup>
                 <?php } ?>
             </select>
+            <br>
             <?php if ($f->isConfigurable()) { ?>
-                <a class="action-button field-config" style="overflow:inherit"
+                <a class="action-button field-config" style="overflow:inherit;margin-left: 6.5%;margin-top: 2%;margin-bottom: 1%;"
                     href="#ajax.php/form/field-config/<?php
                         echo $f->get('id'); ?>"
                     onclick="javascript:
@@ -213,10 +216,10 @@ if ($form && count($langs) > 1) { ?>
                         return false;
                     "><i class="icon-edit"></i> <?php echo __('Config'); ?></a>
             <?php } ?></td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;">
+            <td>
                 <?php echo $f->getVisibilityDescription(); ?>
             </td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;">
+            <td>
                 <input type="text" size="20" name="name-<?php echo $id; ?>"
                     value="<?php echo Format::htmlchars($f->get('name'));
                     ?>" <?php echo $force_name ?>/>
@@ -224,7 +227,7 @@ if ($form && count($langs) > 1) { ?>
                     if ($ferrors['name']) echo '<br/>'; echo $ferrors['name'];
                 ?></font>
                 </td>
-            <td align="center" style="border-right:1px solid gray;border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;">
+            <td align="center">
                 <input class="delete-box" type="checkbox" name="delete-<?php echo $id; ?>"
                     data-field-label="<?php echo $f->get('label'); ?>"
                     data-field-id="<?php echo $id; ?>"
@@ -237,12 +240,12 @@ if ($form && count($langs) > 1) { ?>
     <?php
     }
     for ($i=0; $i<$newcount; $i++) { ?>
-            <td style="border-left:1px solid gray;border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;" align="center"><em>+</em>
+            <td align="center"><em>+</em>
                 <input type="hidden" name="sort-new-<?php echo $i; ?>"
                     value="<?php echo $info["sort-new-$i"]; ?>"/></td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;"><input type="text" size="32" name="label-new-<?php echo $i; ?>"
+            <td><input type="text" size="32" name="label-new-<?php echo $i; ?>"
                 value="<?php echo $info["label-new-$i"]; ?>"/></td>
-            <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;"><select style="max-width:150px" name="type-new-<?php echo $i; ?>">
+            <td><select style="max-width:150px" name="type-new-<?php echo $i; ?>">
                 <?php foreach (FormField::allTypes() as $group=>$types) {
                     ?><optgroup label="<?php echo Format::htmlchars(__($group)); ?>"><?php
                     foreach ($types as $type=>$nfo) {
@@ -256,7 +259,7 @@ if ($form && count($langs) > 1) { ?>
                 <?php } ?>
             </select>
         </td>
-        <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;">
+        <td>
             <select name="visibility-new-<?php echo $i; ?>">
 <?php
     $rmode = $info['visibility-new-'.$i];
@@ -265,7 +268,7 @@ if ($form && count($langs) > 1) { ?>
          echo 'selected="selected"'; ?>><?php echo $I['desc']; ?></option>
 <?php } ?>
                 <select>
-                    <td style="border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;"><input type="text" size="20" name="name-new-<?php echo $i; ?>"
+                    <td><input type="text" size="20" name="name-new-<?php echo $i; ?>"
                         value="<?php echo $info["name-new-$i"]; ?>"/>
                         <font class="error"><?php
                             if ($errors["new-$i"]['name']) echo '<br/>'; echo $errors["new-$i"]['name'];
@@ -274,7 +277,6 @@ if ($form && count($langs) > 1) { ?>
                     </td>
                 </select>
             </select>
-            <td style="border-right:1px solid gray;border-bottom:1px solid gray; padding-top:5px; padding-bottom:5px;"></td>
         </tr>
     <?php } ?>
     </tbody>
@@ -293,6 +295,7 @@ if ($form && count($langs) > 1) { ?>
         </tr>
     </tbody>
     </table>
+
 <p class="centered">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
     <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">

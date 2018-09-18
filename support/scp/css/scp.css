@@ -3,7 +3,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.15px;
   -webkit-font-smoothing:antialiased;
-          font-smoothing:antialiased;
+          /* font-smoothing:antialiased; */
 }
 body, html {
     background:#eee;
@@ -1106,9 +1106,9 @@ ul.tabs {
     position: relative;
     box-shadow: inset 0 -5px 10px -9px rgba(0,0,0,0.3);
 }
-
+/* 
 #response_options ul.tabs {
-}
+} */
 
 ul.tabs li {
     margin:0;
@@ -2969,7 +2969,7 @@ a.attachment {
     color:white;
 }
 .btn-red{
-    background-color:rgb(255,38,95); 
+    background-color:red; 
     color:white;
 }
 

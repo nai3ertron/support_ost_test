@@ -288,8 +288,9 @@ h2, .subject {
 }
 body {
   
-  background: rgb(116, 185, 244);
-  /* background: url('../images/page_bg.png') top left repeat-x #c8c8c8; */
+  /* background: rgb(116, 185, 244); */
+  background: url('../images/bg.png') top left repeat-x #c8c8c8;
+  
 }
 #container {
   background: #fff;
@@ -298,6 +299,7 @@ body {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  
 }
 #header {
   position: relative;

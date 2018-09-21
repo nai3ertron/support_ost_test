@@ -8,8 +8,8 @@ if(!defined('OSTSTAFFINC') || !$category || !$thisstaff) die('Access Denied');
 </div>
 <?php if ($thisstaff->hasPerm(FAQ::PERM_MANAGE)) {
 echo sprintf('<div class="pull-right flush-right">
-    <a class="green action-button" href="faq.php?cid=%d&a=add">'.__('Add New FAQ').'</a>
-    <span class="action-button" data-dropdown="#action-dropdown-more"
+    <a class="btn-aqua action-button" href="faq.php?cid=%d&a=add">'.__('Add New FAQ').'</a>
+    <span class="btn-blue action-button" data-dropdown="#action-dropdown-more"
           style="/*DELME*/ vertical-align:top; margin-bottom:0">
         <i class="icon-caret-down pull-right"></i>
         <span ><i class="icon-cog"></i>'. __('More').'</span>

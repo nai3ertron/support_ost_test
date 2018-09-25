@@ -32,14 +32,14 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 
 ?>
 <h1><?php echo __('Open a New Question');?></h1>
-<p><?php echo __('Please fill in the form below to open a new Question.');?></p>
+<p><?php echo __('Please fill in the form below to open a new question.');?></p>
 <form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
   <?php csrf_token(); ?>
   <input type="hidden" name="a" value="open">
   <table width="800" cellpadding="1" cellspacing="0" style="border:0;">
     <tbody>
 <?php
-// show data client 
+// show data client
         if (!$thisclient) {
             $uform = UserForm::getUserForm()->getForm($_POST);
             if ($_POST) $uform->isValid();

@@ -385,7 +385,7 @@ foreach ($staff->dept_access as $dept_access) {
           <th colspan="2">
             <?php echo __('Assigned Teams'); ?>
             <div><small><?php echo __(
-            "Agent will have access to tickets assigned to a team they belong to regardless of the ticket's department. Alerts can be enabled for each associated team."
+            "Agent will have access to questions assigned to a team they belong to regardless of the question's department. Alerts can be enabled for each associated team."
             ); ?>
             </small></div>
           </th>

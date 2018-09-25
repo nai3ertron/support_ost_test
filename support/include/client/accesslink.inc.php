@@ -54,7 +54,7 @@ else
 if ($cfg->getClientRegistrationMode() != 'disabled'
     || !$cfg->isClientLoginRequired()) {
     echo sprintf(
-    __("If this is your first time contacting us or you've lost the question number, please %s open a new Question %s"),
+    __("If this is your first time contacting us or you've lost the question number, please %s open a new question %s"),
         '<a href="open.php">','</a>');
 } ?>
 </p>

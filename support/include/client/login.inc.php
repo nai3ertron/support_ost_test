@@ -1,5 +1,8 @@
 <?php
 if(!defined('OSTCLIENTINC')) die('Access Denied');
+include('http://localhost/mongo_reg/login.php');
+session_start();
+
 
 $email=Format::input($_POST['luser']?:$_GET['e']);
 $passwd=Format::input($_POST['lpasswd']?:$_GET['t']);
@@ -8,15 +11,20 @@ $content = Page::lookupByType('banner-client');
 
 if ($content) {
     list($title, $body) = $ost->replaceTemplateVariables(
-        array($content->getName(), $content->getBody()));
+        array($content->getLocalName(), $content->getLocalBody()));
 } else {
     $title = __('Sign In');
     $body = __('To better serve you, we encourage our clients to register for an account and verify the email address we have on record.');
+
+
+
 }
 
 ?>
 <h1><?php echo Format::display($title); ?></h1>
 <p><?php echo Format::display($body); ?></p>
+
+
 <form action="login.php" method="post" id="clientLogin">
     <?php csrf_token(); ?>
 <div style="display:table-row">
@@ -30,6 +38,18 @@ if ($content) {
     </div>
     <p>
         <input class="btn" type="submit" value="<?php echo __('Sign In'); ?>">
+
+
+        <!-- <script >
+        $(document).ready(function() {
+ if ($('#username').val() !== '' || $('#passwd').val() !== '') {
+    $('#clientLogin').submit();
+ }
+}); // SUBMIT FORM
+        </script> -->
+
+
+
 <?php if ($suggest_pwreset) { ?>
         <a style="padding-top:4px;display:inline-block;" href="pwreset.php"><?php echo __('Forgot My Password'); ?></a>
 <?php } ?>

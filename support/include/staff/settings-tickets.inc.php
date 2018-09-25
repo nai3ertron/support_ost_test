@@ -175,7 +175,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             <td><?php echo __('Human Verification');?>:</td>
             <td>
                 <input type="checkbox" name="enable_captcha" <?php echo $config['enable_captcha']?'checked="checked"':''; ?>>
-                <?php echo __('Enable CAPTCHA on new web tickets.');?>
+                <?php echo __('Enable CAPTCHA on new web questions.');?>
                 &nbsp;<font class="error">&nbsp;<?php echo $errors['enable_captcha']; ?></font>
                 &nbsp;<i class="help-tip icon-question-sign" href="#human_verification"></i>
             </td>

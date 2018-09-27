@@ -68,9 +68,9 @@ if ($_POST && isset($_POST['luser'])) {
                 // fall through to show login page again
             }
         }
+        // login success go this here
         else {
-            Http::redirect($_SESSION['_client']['auth']['dest']
-                ?: 'tickets.php');
+            Http::redirect($_SESSION['_client']['auth']['dest'] ?: 'tickets.php');
         }
     } elseif(!$errors['err']) {
         $errors['err'] = sprintf('%s - %s', __('Invalid username or password'), __('Please try again!'));

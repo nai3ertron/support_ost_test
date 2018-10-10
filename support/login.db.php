@@ -51,7 +51,7 @@ function check_data_api($username,$passwd){
 if(isset($_REQUEST['token'])){
     //require token get username & pass decode 
     
-    $userName_api = "Central";
+    $userName_api = "admin";
     $passWd_api = "123456";
     $data_api = check_data_api($userName_api,$passWd_api);
     $get_data = json_decode($data_api,true);
@@ -61,7 +61,7 @@ if(isset($_REQUEST['token'])){
         // get role to check 
         $role =  $get_data['data']['0']['userRoles']['0']['roleNameEn'];
        
-        if($role == 'Central Officer'){        
+        if($role == 'Central Officer' || $role == 'Admin'){        
             $get_userName_staff = $get_data['data']['0']['userName'];
             $get_email_staff = $get_data['data']['0']['email'];
             $get_pass= $get_data['data']['0']['passWord'];

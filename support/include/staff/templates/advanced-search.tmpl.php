@@ -1,5 +1,5 @@
 <div id="advanced-search">
-<h3 class="drag-handle"><?php echo __('Advanced Ticket Search');?></h3>
+<h3 class="drag-handle"><?php echo __('Advanced Question Search');?></h3>
 <a class="close" href=""><i class="icon-remove-circle"></i></a>
 <hr/>
 <form action="#tickets/search" method="post" name="search">

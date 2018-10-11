@@ -422,7 +422,7 @@ if (isset($_SESSION['advsearch'])) {
     $tickets = $search->mangleQuerySet($tickets, $form);
     $count = $tickets->count();
     $nav->addSubMenu(array('desc' => __('Search').' ('.number_format($count).')',
-                           'title'=>__('Advanced Ticket Search'),
+                           'title'=>__('Advanced Question Search'),
                            'href'=>'tickets.php?status=search',
                            'iconclass'=>'Ticket'),
                         (!$_REQUEST['status'] || $_REQUEST['status']=='search'));

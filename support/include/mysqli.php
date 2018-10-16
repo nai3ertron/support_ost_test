@@ -182,7 +182,7 @@ function db_query($query, $logError=true, $buffered=true) {
     global $ost, $__db;
 
     if ($__db->unbuffered_result) {
-        $__db->unbuffered_result->free();
+        // $__db->unbuffered_result->free();
         $__db->unbuffered_result = false;
     }
 

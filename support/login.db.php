@@ -50,9 +50,20 @@ function check_data_api($username,$passwd){
 
 if(isset($_REQUEST['token'])){
     //require token get username & pass decode 
-    
-    $userName_api = "admin";
-    $passWd_api = "123456";
+
+    $id= $_REQUEST['token'];
+    $string = base64_decode($id);
+    for($i=0; $i<strlen($string); $i++) {
+        $char = substr($string, $i, 1);
+        $keychar = substr("embypass", ($i % strlen("embypass"))-1, 1);
+        $char = chr(ord($char)-ord($keychar));
+        $result.=$char;
+    }
+        $needle = '&';
+        $userName_api = substr($result, 0, strpos($result, $needle));
+        $passWd_api = strstr($result, '&');
+        $passWd_api = substr($passWd_api,1);
+
     $data_api = check_data_api($userName_api,$passWd_api);
     $get_data = json_decode($data_api,true);
     
@@ -271,7 +282,7 @@ if(isset($_REQUEST['token'])){
     }      
   }else{
       // set response when fail
-    echo "No Request token!";
+    // echo "No Request token!";
   }
   
   
@@ -281,85 +292,135 @@ if(isset($_REQUEST['token'])){
 <head>
 <title>redirect..</title>
 </head>
-    <form action="login.db.php" method="post" >
-        <input type="text" name="token">
-        <input type="submit">
-    </form> 
-    <span class="loader" style="margin-top:16%;">
-        <span class="loader-inner"></span>
-    </span>
+  
+    <div class="cs-loader">
+        <div class="cs-loader-inner" style=" font-family:Comic Sans MS, cursive, sans-serif;">
+            <label>	L</label>
+            <label>	O</label>
+            <label>	A</label>
+            <label>	D</label>
+            <label>	I</label>
+            <label>	N</label>
+            <label>	G</label>
+            <label>	.</label>
+            <label>	.</label>
+        </div>
+    </div>
 
 
 <style>
- body, html {
-    height: 100%;
-    text-align: center;
-}
-
 body {
-  background-color: #242F3F;
+  margin: 0;
+  padding: 0;
+  background:#3498db;
 }
 
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  top: 50%;
-  animation: loader 2s infinite ease;
-}
-
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
+.cs-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
 }
 
-@keyframes loader {
+.cs-loader-inner {
+  transform: translateY(-50%);
+  top: 50%;
+  position: absolute;
+  width: calc(100% - 200px);
+  color: #FFF;
+  padding: 0 100px;
+  text-align: center;
+}
+
+.cs-loader-inner label {
+  font-size: 20px;
+  opacity: 0;
+  display:inline-block;
+}
+
+@keyframes lol {
   0% {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(-300px);
   }
-  
-  25% {
-    transform: rotate(180deg);
+  33% {
+    opacity: 1;
+    transform: translateX(0px);
   }
-  
-  50% {
-    transform: rotate(180deg);
+  66% {
+    opacity: 1;
+    transform: translateX(0px);
   }
-  
-  75% {
-    transform: rotate(360deg);
-  }
-  
   100% {
-    transform: rotate(360deg);
+    opacity: 0;
+    transform: translateX(300px);
   }
 }
 
-@keyframes loader-inner {
+@-webkit-keyframes lol {
   0% {
-    height: 0%;
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
   }
-  
-  25% {
-    height: 0%;
+  33% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
   }
-  
-  50% {
-    height: 100%;
+  66% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
   }
-  
-  75% {
-    height: 100%;
-  }
-  
   100% {
-    height: 0%;
+    opacity: 0;
+    -webkit-transform: translateX(300px);
   }
+}
+
+.cs-loader-inner label:nth-child(7) {
+  -webkit-animation: lol 3s infinite ease-in-out;
+  animation: lol 3s infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(9) {
+  -webkit-animation: lol 3s 100ms infinite ease-in-out;
+  animation: lol 3s 100ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(8) {
+  -webkit-animation: lol 3s 200ms infinite ease-in-out;
+  animation: lol 3s 200ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(7) {
+  -webkit-animation: lol 3s 300ms infinite ease-in-out;
+  animation: lol 3s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(6) {
+  -webkit-animation: lol 3s 400ms infinite ease-in-out;
+  animation: lol 3s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(5) {
+  -webkit-animation: lol 3s 500ms infinite ease-in-out;
+  animation: lol 3s 500ms infinite ease-in-out;
+}
+.cs-loader-inner label:nth-child(4) {
+  -webkit-animation: lol 3s 600ms infinite ease-in-out;
+  animation: lol 3s 600ms infinite ease-in-out;
+}
+.cs-loader-inner label:nth-child(3) {
+  -webkit-animation: lol 3s 700ms infinite ease-in-out;
+  animation: lol 3s 700ms infinite ease-in-out;
+}
+.cs-loader-inner label:nth-child(2) {
+  -webkit-animation: lol 3s 800ms infinite ease-in-out;
+  animation: lol 3s 800ms infinite ease-in-out;
+}
+.cs-loader-inner label:nth-child(1) {
+  -webkit-animation: lol 3s 900ms infinite ease-in-out;
+  animation: lol 3s 900ms infinite ease-in-out;
 }
 </style> 
 

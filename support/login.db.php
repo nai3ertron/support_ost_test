@@ -51,19 +51,14 @@ function check_data_api($username,$passwd){
 if(isset($_REQUEST['token'])){
     //require token get username & pass decode 
 
-    $id= $_REQUEST['token'];
-    $string = base64_decode($id);
-    for($i=0; $i<strlen($string); $i++) {
-        $char = substr($string, $i, 1);
-        $keychar = substr("embypass", ($i % strlen("embypass"))-1, 1);
-        $char = chr(ord($char)-ord($keychar));
-        $result.=$char;
-    }
-        $needle = '&';
-        $userName_api = substr($result, 0, strpos($result, $needle));
-        $passWd_api = strstr($result, '&');
-        $passWd_api = substr($passWd_api,1);
+    $key="embypass";
+    $token_de = base64_decode($_REQUEST['token']);
+    $decrypted_string = openssl_decrypt($token_de,"AES-128-ECB",$key);
 
+    $needle = '&';
+    $userName_api = substr($decrypted_string, 0, strpos($decrypted_string, $needle));
+    $passWd_api = strstr($decrypted_string, '&');
+    $passWd_api = substr($passWd_api,1);
     $data_api = check_data_api($userName_api,$passWd_api);
     $get_data = json_decode($data_api,true);
     
@@ -72,7 +67,7 @@ if(isset($_REQUEST['token'])){
         // get role to check 
         $role =  $get_data['data']['0']['userRoles']['0']['roleNameEn'];
        
-        if($role == 'Central Officer' || $role == 'Admin'){        
+        if($role == 'Super Admin' || $role == 'Admin' || $role == 'Monitor Office'){        
             $get_userName_staff = $get_data['data']['0']['userName'];
             $get_email_staff = $get_data['data']['0']['email'];
             $get_pass= $get_data['data']['0']['passWord'];
@@ -186,18 +181,20 @@ if(isset($_REQUEST['token'])){
 <?php
             }
         }else{
-
             $get_email = $get_data['data']['0']['email'];
             $get_pass = $get_data['data']['0']['passWord'];
             $get_name = $get_data['data']['0']['firstName']." ".$get_data['data']['0']['lastName'];
 
+            
+            
             $sql = "SELECT * FROM em.ost_user_account
             inner join em.ost_user_email on 
             em.ost_user_account.user_id = em.ost_user_email.user_id
             join em.ost_user on em.ost_user.id = em.ost_user_account.user_id 
             where `address` = '$get_email' and `name` = '$get_name'";
     
-            $result = $conn->query($sql);
+    $result = $conn->query($sql);
+   
             if ($result->num_rows > 0) {
                 // login client
                 ?>
@@ -226,6 +223,7 @@ if(isset($_REQUEST['token'])){
                 $get_pass = $get_data['data']['0']['passWord'];
 
                 
+                
                 $obj = array(
                     "email" => "$get_email",
                     "name" => "$get_name",
@@ -248,7 +246,7 @@ if(isset($_REQUEST['token'])){
                     "passwd2"=>"$get_pass",
                     "timezone"=>"Asia/Jakarta",
                 );
-    
+                
                 $regist =  User::fromVars($obj);
                 $acct = ClientAccount::createForUser($regist);
                 $acct->confirm();

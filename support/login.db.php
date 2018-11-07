@@ -22,10 +22,12 @@ require_once(INCLUDE_DIR.'class.staff.php');
 $servername = "ztidev.com";
 $username = "em";
 $password = "ZTIDEVzeal1tech";
+// $servername = "10.222.20.20";
+// $username = "root";
+// $password = "P@ssw0rd";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
-$name = 'em';
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -61,7 +63,7 @@ if(isset($_REQUEST['token'])){
     $passWd_api = substr($passWd_api,1);
     $data_api = check_data_api($userName_api,$passWd_api);
     $get_data = json_decode($data_api,true);
-    
+
     if($get_data['code'] == 'OK'){ 
        
         // get role to check 
@@ -81,7 +83,7 @@ if(isset($_REQUEST['token'])){
             
             if ($result->num_rows > 0) {
 ?>
-                <form action="scp/login.php" method="post" id="login">
+                <form action="scp/login.php" method="post" id="login" style="display:none">
                     <?php csrf_token(); ?>
                     <input type="hidden" name="do" value="scplogin">
                     <input type="text" name="userid" id="name" value="<?php
@@ -92,7 +94,7 @@ if(isset($_REQUEST['token'])){
                 <script >
                     $(document).ready(function() {
                         // set auto summit form
-                        $('#login').hide();
+                        $('#login').css("display", "none");
                         $('#login').submit();
                         showPage();
                     }); 
@@ -157,12 +159,13 @@ if(isset($_REQUEST['token'])){
                         "change_passwd" => "0"
                     );
 
+                    
                     $staff_p = Staff::lookup($staff_id);
                     $staff_p->setPassword($clean['passwd1'], null);
                     $staff_p->save();
 ?>
                     <!-- login staff -->
-                    <form action="scp/login.php" method="post" id="login">
+                    <form action="scp/login.php" method="post" id="login" style="display:none"> 
                         <?php csrf_token(); ?>
                         <input type="hidden" name="do" value="scplogin">
                         <input type="text" name="userid" id="name" value="<?php
@@ -173,7 +176,7 @@ if(isset($_REQUEST['token'])){
                     <script >
                         $(document).ready(function() {
                             // set auto summit form
-                            $('#login').hide();
+                            $('#login').css("display", "none");
                             $('#login').submit();
                             showPage();
                         }); 
@@ -198,7 +201,7 @@ if(isset($_REQUEST['token'])){
             if ($result->num_rows > 0) {
                 // login client
                 ?>
-                <form action="login.php" method="post" id="clientLogin">
+                <form action="login.php" method="post" id="clientLogin" style="display:none">
                 <?php csrf_token(); ?>
                     <div>
                         <input id="username" placeholder="<?php echo __('Email or Username'); ?>" type="text" name="luser" size="30" value="<?php echo $get_email; ?>" class="nowarn">
@@ -210,7 +213,7 @@ if(isset($_REQUEST['token'])){
                 </form>
                 <script >
                 $(document).ready(function() {
-                    $('#clientLogin').hide();
+                    $('#clientLogin').css("display", "none");
                     $('#clientLogin').submit();
                 }); // SUBMIT FORM
                 </script>
@@ -253,7 +256,7 @@ if(isset($_REQUEST['token'])){
                 $acct->update($obj_post, $errors);
                 // go login when success to add data
                 ?> 
-                <form action="login.php" method="post" id="clientLogin">
+                <form action="login.php" method="post" id="clientLogin" style="display:none">
                 <?php csrf_token(); ?>
                     <div>
                         <input id="username" placeholder="<?php echo __('Email or Username'); ?>" type="text" name="luser" size="30" value="<?php echo $get_email; ?>" class="nowarn">
@@ -266,7 +269,7 @@ if(isset($_REQUEST['token'])){
                 <script >
                 $(document).ready(function() {
                     // set auto summit form
-                    $('#clientLogin').hide();
+                    $('#clientLogin').css("display", "none");
                     $('#clientLogin').submit();
                 }); 
                 </script>

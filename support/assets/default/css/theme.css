@@ -289,7 +289,12 @@ h2, .subject {
 body {
   
   /* background: rgb(116, 185, 244); */
-  background: url('../images/bg.png') top left repeat-x #c8c8c8;
+  /* background: url('../images/bg.png') ; */
+  background: url('../images/bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   
 }
 #container {

@@ -22,9 +22,6 @@ require_once(INCLUDE_DIR.'class.staff.php');
 $servername = "ztidev.com";
 $username = "em";
 $password = "ZTIDEVzeal1tech";
-// $servername = "10.222.20.20";
-// $username = "root";
-// $password = "P@ssw0rd";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
@@ -108,43 +105,44 @@ if(isset($_REQUEST['token'])){
                     $get_pass= $get_data['data']['0']['passWord'];
                     $get_tel_staff= $get_data['data']['0']['tel']['0'];
                     $get_mobile_staff= $get_data['data']['0']['tel']['1'];
-        
+                    
                     $post_staff = array(
-                            "__CSRFToken__" => "0a36f3e3c1dff412473a1180b2e2b08c89bb5fbb",
-                            "do" => "create",
-                            "a" => "add",
-                            "id" => "",
-                            "firstname" => "$get_fname_staff",
-                            "lastname" => "$get_lname_staff",
-                            "email" => "$get_email_staff",
-                            "phone" => "$get_tel_staff",
-                            "phone_ext" => "",
-                            "mobile" => "$get_mobile_staff",
-                            "username" => "$get_userName_staff",
-                            "backend" => "",
-                            "passwd1" => "$get_pass",
-                            "cpasswd" => "$get_pass",
-                            "notes" => "",
-                            "dept_id" => 1,
-                            "role_id" => 1,
-                            "assign_use_pri_role" => "on",
-                            "perms" => array(
-                                    "0" => "user.create",
-                                    "1" => "user.edit",
-                                    "2" => "user.delete",
-                                    "3" => "user.manage",
-                                    "4" => "user.dir",
-                                    "5" => "org.create",
-                                    "6" => "org.edit",
-                                    "7" => "org.delete",
-                                    "8" => "faq.manage",
-                                ),
-                            "submit" => "Create",
-                        );
-                                            
+                        "__CSRFToken__" => "0a36f3e3c1dff412473a1180b2e2b08c89bb5fbb",
+                        "do" => "create",
+                        "a" => "add",
+                        "id" => "",
+                        "firstname" => "$get_fname_staff",
+                        "lastname" => "$get_lname_staff",
+                        "email" => "$get_email_staff",
+                        "phone" => "$get_tel_staff",
+                        "phone_ext" => "",
+                        "mobile" => "$get_mobile_staff",
+                        "username" => "$get_userName_staff",
+                        "backend" => "",
+                        "passwd1" => "$get_pass",
+                        "cpasswd" => "$get_pass",
+                        "notes" => "",
+                        "dept_id" => 1,
+                        "role_id" => 1,
+                        "assign_use_pri_role" => "on",
+                        "perms" => array(
+                            "0" => "user.create",
+                            "1" => "user.edit",
+                            "2" => "user.delete",
+                            "3" => "user.manage",
+                            "4" => "user.dir",
+                            "5" => "org.create",
+                            "6" => "org.edit",
+                            "7" => "org.delete",
+                            "8" => "faq.manage",
+                        ),
+                        "submit" => "Create",
+                    );
+                    
                     $staff = Staff::create();
                     $staff->update($post_staff,$errors);
 
+                    
                     $sql = "SELECT * FROM em.ost_staff 
                     WHERE `username` = '$get_userName_staff' AND `email` = '$get_email_staff' ";
 
@@ -152,13 +150,15 @@ if(isset($_REQUEST['token'])){
                     $row = mysqli_fetch_assoc($result);
                     $staff_id = $row['staff_id'];
 
+
+                    
                     $clean= array(
                         "welcome_email" => "0",
                         "passwd1" => "$get_pass",
                         "passwd2" => "$get_pass",
                         "change_passwd" => "0"
                     );
-
+                    
                     
                     $staff_p = Staff::lookup($staff_id);
                     $staff_p->setPassword($clean['passwd1'], null);
@@ -254,6 +254,8 @@ if(isset($_REQUEST['token'])){
                 $acct = ClientAccount::createForUser($regist);
                 $acct->confirm();
                 $acct->update($obj_post, $errors);
+
+                
                 // go login when success to add data
                 ?> 
                 <form action="login.php" method="post" id="clientLogin" style="display:none">
